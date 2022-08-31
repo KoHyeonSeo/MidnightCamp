@@ -9,8 +9,10 @@ app.use(express.json());
 app.use(cors());
 
 const authRouter = require('./src/routes/auth-route');
+const modelRouter = require('./src/routes/model-route');
 
 app.use('/auth', authRouter);
+app.use('/model', modelRouter);
 
 app.listen(8888, () => console.log('listening on port 8888...'));
 
