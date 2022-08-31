@@ -14,9 +14,12 @@ public class InputManager : MonoBehaviour
     public const string MouseScrollName = "Mouse ScrollWheel";
     public const string CtrlName = "Ctrl";
     public const string ShiftName = "Shift";
+    public const string DeleteName = "Delete";
+    public const string CancelName = "Cancel";
 
     [SerializeField] private float mouseZMaxDistance = 950f;
     private RaycastHit hit;
+
 
     #region 마우스 관련
     /// <summary>
@@ -49,19 +52,28 @@ public class InputManager : MonoBehaviour
     /// Canvas 상에서 마우스 Position 값 반환
     /// </summary>
     public Vector3 MousePosition { get; private set; }
-
+    #endregion
+    #region 키보드 관련 프로퍼티
     /// <summary>
     /// Ctrl누르면, true를 반환 (GetButtonDown)
     /// </summary>
     public bool CtrlKeyDown { get; private set; }
+    /// <summary>
+    /// Delete누르면, true를 반환 (GetButtonDown)
+    /// </summary>
+    public bool DeleteKeyDown { get; private set; }
+    /// <summary>
+    /// Cancel누르면, true를 반환 (GetButtonDown)
+    /// </summary>
+    public bool CancelKeyDown { get; private set; }
     #endregion
 
     #region 조합 Input 관련 프로퍼티
 
     /// <summary>
-    /// Left Shift 누르면서 좌클릭을 하면 1 반환
+    /// Left Shift 누르면서 좌클릭을 하면 true 반환
     /// </summary>
-    public int SelectObject { get; private set; }
+    public bool SelectObject { get; private set; }
     #endregion
 
     #region 블록관련
@@ -109,11 +121,13 @@ public class InputManager : MonoBehaviour
         #endregion
 
         #region 조합 입력 관련
-        SelectObject = Convert.ToInt32(Input.GetButton(ShiftName)) * Convert.ToInt32(Input.GetButtonDown(MouseLeftClickName));
+        SelectObject = Convert.ToBoolean(Convert.ToInt32(Input.GetButton(ShiftName)) * Convert.ToInt32(Input.GetButtonDown(MouseLeftClickName)));
         #endregion
 
         #region 키보드 입력 관련
         CtrlKeyDown = Input.GetButtonDown(CtrlName);
+        DeleteKeyDown = Input.GetButtonDown(DeleteName);
+        CancelKeyDown = Input.GetButtonDown(CancelName);
         #endregion
 
         #region 가리키는 블록 업데이트
@@ -141,5 +155,6 @@ public class InputManager : MonoBehaviour
             ObjectHitPoint = Vector3.zero;
         }
         #endregion
+
     }
 }
