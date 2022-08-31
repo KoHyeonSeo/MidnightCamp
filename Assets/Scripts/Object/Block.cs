@@ -23,6 +23,13 @@ public class Block
     public Vector2[] uv3;
     public Vector2[] uv4;
 
+    public Color color;
+    public float metallic;
+    public float smoothness;
+
+    public Texture2D texture;
+    public Texture2D normal;
+
     public Block()
     {
         ID = GetHashCode();

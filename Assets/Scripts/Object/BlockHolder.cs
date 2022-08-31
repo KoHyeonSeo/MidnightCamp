@@ -28,6 +28,7 @@ public class BlockHolder : MonoBehaviour
             mesh = meshFilter.mesh;
             material = meshRenderer.material;
         }
+
     }
 
     public string ToJson()
@@ -49,6 +50,13 @@ public class BlockHolder : MonoBehaviour
             block.uv2 = mesh.uv2;
             block.uv3 = mesh.uv3;
             block.uv4 = mesh.uv4;
+
+            block.color = material.GetColor("_Color");
+            block.metallic = material.GetFloat("_Metallic");
+            block.smoothness = material.GetFloat("_Glossiness");
+
+            block.texture = material.GetTexture("_MainTex") as Texture2D;
+            block.normal = material.GetTexture("_BumpMap") as Texture2D;
         }
         
         return JsonUtility.ToJson(block);
@@ -76,12 +84,16 @@ public class BlockHolder : MonoBehaviour
             mesh.RecalculateTangents();
 
             meshFilter.mesh = mesh;
-        }
-    }
 
-    public void test1(BlockHolder ToObject)
-    {
-        string json = ToJson();
-        ToObject.FromJson(json);
+            material = new Material(Shader.Find("Standard"));
+            material.SetColor("_Color", block.color);
+            material.SetFloat("_Metallic", block.metallic);
+            material.SetFloat("_Glossiness", block.smoothness);
+
+            material.SetTexture("_MainTex", block.texture);
+            material.SetTexture("_BumpMap", block.normal);
+
+            meshRenderer.material = material;
+        }
     }
 }

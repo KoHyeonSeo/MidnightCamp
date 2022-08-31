@@ -31,7 +31,6 @@ public class DebugTest : MonoBehaviour
 
         for (int i=0; i<fromHolders.Length; i++)
         {
-            print(i);
             Toholders[i].FromJson(fromHolders[i].ToJson());
         }
     }
