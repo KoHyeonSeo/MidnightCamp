@@ -73,11 +73,20 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
+        //ObjectHitPoint 간단 사용법
         //if(ObjectHitPoint != Vector3.zero)
         //{
         //    Debug.Log($"ObjectHitPoint: {ObjectHitPoint}");
         //}
-        //Debug.Log($"Position: {PointBlockInformation.position}\nRotation: {PointBlockInformation.rotation}\nScale: {PointBlockInformation.scale}");
+        
+        //PointBlockInformation 간단 사용법
+        //if (PointBlock)
+        //{
+        //    Debug.Log($"Position: {PointBlockInformation.position}\n" +
+        //        $"Rotation: {PointBlockInformation.rotation}\n" +
+        //        $"Scale: {PointBlockInformation.scale}");
+
+        //}
         #region 마우스 관련 Input
         MouseLeftClick = Input.GetButton(MouseLeftClickName);
         MouseRightClick = Input.GetButton(MouseRightClickName);
