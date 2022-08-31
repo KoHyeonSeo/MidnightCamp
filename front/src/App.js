@@ -4,6 +4,8 @@ import Layout from "./layouts/Layout";
 import Main from "./pages/Main";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
+import ShowHephaistos from "./pages/ShowHephaistos";
+import ShowSearchHephaistos from "./pages/ShowSearchHephaistos";
 
 function App() {
   return (
@@ -15,6 +17,10 @@ function App() {
           </Route>
           <Route path="/signin" element={ <Signin/> }/>
           <Route path="/signup" element={ <Signup/> }/>        
+          <Route path="/hephaistos">
+            <Route index element={ <ShowHephaistos/> }/>
+            <Route path="search" element={ <ShowSearchHephaistos/> }/>
+          </Route>  
         </Routes>
       </BrowserRouter>
     </div>

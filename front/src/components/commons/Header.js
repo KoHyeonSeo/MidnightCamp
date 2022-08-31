@@ -12,6 +12,9 @@ function Header() {
             <NavLink className={ HeaderStyle.signupButton } to="/signup">
                 <button>회원가입</button>
             </NavLink>
+            <NavLink className={ HeaderStyle.signupButton } to="/hephaistos">
+                <button>헤파이토스(2D) 조회</button>
+            </NavLink>
         </div>
     );
 }
