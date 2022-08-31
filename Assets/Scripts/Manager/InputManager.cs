@@ -4,13 +4,6 @@ using UnityEngine;
 using System;
 using Unity.VisualScripting;
 
-[Serializable]
-public struct BlockInfo
-{
-    public Vector3 position;
-    public Vector3 rotation;
-    public Vector3 scale;
-}
 public class InputManager : MonoBehaviour
 {
     public const string MouseLeftClickName = "Fire1";
@@ -66,9 +59,9 @@ public class InputManager : MonoBehaviour
     #region 조합 Input 관련 프로퍼티
 
     /// <summary>
-    /// Left Shift 누르면서 좌클릭을 하면 true 반환
+    /// Left Shift 누르면서 좌클릭을 하면 1 반환
     /// </summary>
-    public bool SelectObject { get; private set; }
+    public int SelectObject { get; private set; }
     #endregion
 
     #region 블록관련
@@ -82,9 +75,9 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public Vector3 ObjectHitPoint { get; private set; }
     /// <summary>
-    /// Mouse Pointer가 가리키는 Object의 정보를 반환 
+    /// Mouse Pointer가 가리키는 블록의 hit Normal 반환 
     /// </summary>
-    public BlockInfo PointBlockInformation { get; private set; }
+    public Vector3 ObjectHitNormal { get; private set; }
     #endregion
 
     private void Update()
@@ -116,7 +109,7 @@ public class InputManager : MonoBehaviour
         #endregion
 
         #region 조합 입력 관련
-        SelectObject = Convert.ToBoolean(Convert.ToInt32(Input.GetButton(ShiftName)) * Convert.ToInt32(Input.GetButtonDown(MouseLeftClickName)));
+        SelectObject = Convert.ToInt32(Input.GetButton(ShiftName)) * Convert.ToInt32(Input.GetButtonDown(MouseLeftClickName));
         #endregion
 
         #region 키보드 입력 관련
@@ -134,16 +127,12 @@ public class InputManager : MonoBehaviour
         {
             //가리키는 Object 담기
             PointBlock = hit.collider.gameObject;
-
-            //구조체로 정보 담기
-            BlockInfo block;
-            block.position = PointBlock.gameObject.transform.position;
-            block.rotation = PointBlock.gameObject.transform.rotation.eulerAngles;
-            block.scale = PointBlock.gameObject.transform.localScale;
-            PointBlockInformation = block;
             
             //hitPoint 전달
             ObjectHitPoint = hit.point;
+
+            //hitNormal 전달
+            ObjectHitNormal = hit.normal;
         }
         else
         {
