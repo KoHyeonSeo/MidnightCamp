@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { INIT_INFO, SET_INFO } from "../modules/GroupModule";
+import { INIT_GROUP_INFO, SET_GROUP_INFO } from "../modules/GroupModule";
 
 function Signup() {
 
@@ -9,7 +9,7 @@ function Signup() {
     const dispatch = useDispatch();
 
     const onChangeHandler = (e) => {
-        dispatch({ type: [SET_INFO], payload: e.target})
+        dispatch({ type: [SET_GROUP_INFO], payload: e.target})
         console.log(groupInfo[0])
     }
 
@@ -28,7 +28,7 @@ function Signup() {
 
     useEffect(
         () => {
-            dispatch({ type: [INIT_INFO] });
+            dispatch({ type: [INIT_GROUP_INFO] });
         }, []
     );
 
@@ -38,6 +38,7 @@ function Signup() {
             <input 
                     type="text"
                     name="id"
+                    placeholder="아이디를 입력하세요"
                     onChange={ onChangeHandler }
             />
             <br/>
@@ -45,12 +46,14 @@ function Signup() {
             <input 
                     type="password"
                     name="pwd"
+                    placeholder="비밀번호를 입력하세요"
                     onChange={ onChangeHandler }        
             /><br/>
             <label htmlFor="pwd">그룹명</label><br/>
             <input 
                     type="text"
                     name="name"
+                    placeholder="그룹명을 입력하세요"
                     onChange={ onChangeHandler }        
             /><br/>
 

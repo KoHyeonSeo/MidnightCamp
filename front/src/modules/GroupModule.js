@@ -8,19 +8,19 @@ const initialState = [
     }
 ];
 
-export const INIT_INFO = 'GROUP/INIT_INFO';
-export const SHOW_INFO = 'GROUP/SHOW_INFO';
-export const SET_INFO = 'GROUP/SET_INFO';
+export const INIT_GROUP_INFO = 'GROUP/INIT_GROUP_INFO';
+export const SHOW_GROUP_INFO = 'GROUP/SHOW_GROUP_INFO';
+export const SET_GROUP_INFO = 'GROUP/SET_GROUP_INFO';
 
 const actions = createActions({
-    [INIT_INFO]: () => {},
-    [SHOW_INFO]: () => {},
-    [SET_INFO]: () => {}
+    [INIT_GROUP_INFO]: () => {},
+    [SHOW_GROUP_INFO]: () => {},
+    [SET_GROUP_INFO]: () => {}
 });
 
 export const groupReducer = handleActions(
     {
-        [INIT_INFO]: (state, { payload }) => {
+        [INIT_GROUP_INFO]: (state, { payload }) => {
 
             state[0].group_id = '';
             state[0].group_pwd = '';
@@ -28,11 +28,11 @@ export const groupReducer = handleActions(
 
             return state;
         },
-        [SHOW_INFO]: (state = initialState[0], { payload }) => {
+        [SHOW_GROUP_INFO]: (state = initialState[0], { payload }) => {
 
             return payload;
         },
-        [SET_INFO]: (state = initialState[0], { payload }) => {
+        [SET_GROUP_INFO]: (state = initialState[0], { payload }) => {
 
             switch(payload.name) {
                 case 'id':
