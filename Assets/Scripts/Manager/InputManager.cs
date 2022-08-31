@@ -123,11 +123,12 @@ public class InputManager : MonoBehaviour
         Vector3 screenPoint = Camera.main.ScreenToWorldPoint(MousePosition);
         Vector3 dir = worldPoint - screenPoint;
         Debug.DrawRay(screenPoint, dir.normalized * mouseZMaxDistance, Color.red);
-        if (Physics.Raycast(screenPoint, dir.normalized * mouseZMaxDistance, out hit, mouseZMaxDistance))
+        LayerMask layer = 1 << LayerMask.NameToLayer("Grid");
+        if (Physics.Raycast(screenPoint, dir.normalized * mouseZMaxDistance, out hit, mouseZMaxDistance, ~layer))
         {
             //가리키는 Object 담기
             PointBlock = hit.collider.gameObject;
-            
+
             //hitPoint 전달
             ObjectHitPoint = hit.point;
 
