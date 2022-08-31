@@ -27,6 +27,7 @@ public class scaleEditor : MonoBehaviour
                 // 게임 오브젝트 선언 
                 EditObject = manager.PointBlock;
                 isClicked = true;
+                print("111");
             }
             //만약 빈 허공을 눌렀을 경우 기존에 눌렀던 오브젝트들을 다시 초기화 한다.
             else
@@ -36,13 +37,28 @@ public class scaleEditor : MonoBehaviour
             }
         }
         #endregion
-        if (isClicked)
+        if (isClicked && manager.MouseWheelScroll != 0)
         {
+
             if (manager.MouseWheelScroll - oldScrollPoint >= 0)
             {
-                EditObject.transform.localScale += new Vector3(0,0.1f,0)*Time.deltaTime;
+
+                EditObject.transform.localScale += new Vector3(0, 0.1f, 0);
+
             }
+            else if (manager.MouseWheelScroll - oldScrollPoint <= 0)
+            {
+                EditObject.transform.localScale += new Vector3(0, -0.1f, 0);
+            }
+          
             
+            
+        }
+        if (manager.PointBlock)
+        {
+            Debug.Log($"Position: {manager.PointBlockInformation.position}\n" +
+                $"Rotation: {manager.PointBlockInformation.rotation}\n" +
+                $"Scale: {manager.PointBlockInformation.scale}");
         }
         oldScrollPoint = manager.MouseWheelScroll;
     }
