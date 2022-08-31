@@ -37,6 +37,7 @@ public class scaleEditor : MonoBehaviour
             }
         }
         #endregion
+        #region 오브젝트 스크롤값 변경할때 scale값  변경
         if (isClicked && manager.MouseWheelScroll != 0)
         {
 
@@ -50,9 +51,13 @@ public class scaleEditor : MonoBehaviour
             {
                 EditObject.transform.localScale += new Vector3(0, -0.1f, 0);
             }
-          
-            
-            
+            #endregion
+            #region 오브젝트 스케일 변경
+            //마우스 커서가 오브젝트의 면을 클릭했을 때 그 면의 스케일을 변경할 수 있도록 한다.
+
+            #endregion
+
+
         }
         //오브젝트의 정보를 가져온다.
         if (manager.PointBlock)
