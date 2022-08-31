@@ -74,6 +74,10 @@ public class InputManager : MonoBehaviour
     /// Mouse Pointer가 가리키는 블록의 hit Point를 반환 
     /// </summary>
     public Vector3 ObjectHitPoint { get; private set; }
+    /// <summary>
+    /// Mouse Pointer가 가리키는 블록의 hit Normal 반환 
+    /// </summary>
+    public Vector3 ObjectHitNormal { get; private set; }
     #endregion
 
     private void Update()
@@ -126,6 +130,9 @@ public class InputManager : MonoBehaviour
             
             //hitPoint 전달
             ObjectHitPoint = hit.point;
+
+            //hitNormal 전달
+            ObjectHitNormal = hit.normal;
         }
         else
         {
