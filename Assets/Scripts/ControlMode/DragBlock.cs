@@ -24,7 +24,9 @@ public class DragBlock : MonoBehaviour
             if (selectBlock)
             {
                 Debug.Log(selectBlock);
-                Vector3 newPos = new Vector3(selectBlock.transform.position.x + input.MouseXOut, selectBlock.transform.position.y + input.MouseYOut, selectBlock.transform.position.z);
+                Vector3 newPos = new Vector3(selectBlock.transform.position.x + input.MouseXOut,
+                    selectBlock.transform.position.y + input.MouseYOut,
+                    selectBlock.transform.position.z);
                 selectBlock.transform.position = newPos;
             }
         }
