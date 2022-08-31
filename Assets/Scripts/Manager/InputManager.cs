@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 [Serializable]
 public struct BlockInfo
@@ -18,6 +19,8 @@ public class InputManager : MonoBehaviour
     public const string MouseXoutName = "Mouse X";
     public const string MouseYoutName = "Mouse Y";
     public const string MouseScrollName = "Mouse ScrollWheel";
+    public const string CtrlName = "Ctrl";
+    public const string ShiftName = "Shift";
 
     [SerializeField] private float mouseZMaxDistance = 950f;
     private RaycastHit hit;
@@ -53,6 +56,19 @@ public class InputManager : MonoBehaviour
     /// Canvas 상에서 마우스 Position 값 반환
     /// </summary>
     public Vector3 MousePosition { get; private set; }
+
+    /// <summary>
+    /// Ctrl누르면, true를 반환 (GetButtonDown)
+    /// </summary>
+    public bool CtrlKeyDown { get; private set; }
+    #endregion
+
+    #region 조합 Input 관련 프로퍼티
+
+    /// <summary>
+    /// Left Shift 누르면서 좌클릭을 하면 true 반환
+    /// </summary>
+    public bool SelectObject { get; private set; }
     #endregion
 
     #region 블록관련
@@ -78,15 +94,17 @@ public class InputManager : MonoBehaviour
         //{
         //    Debug.Log($"ObjectHitPoint: {ObjectHitPoint}");
         //}
-        
+
         //PointBlockInformation 간단 사용법
         //if (PointBlock)
         //{
         //    Debug.Log($"Position: {PointBlockInformation.position}\n" +
         //        $"Rotation: {PointBlockInformation.rotation}\n" +
         //        $"Scale: {PointBlockInformation.scale}");
-
         //}
+
+        //Debug.Log(SelectObject);
+
         #region 마우스 관련 Input
         MouseLeftClick = Input.GetButton(MouseLeftClickName);
         MouseRightClick = Input.GetButton(MouseRightClickName);
@@ -95,6 +113,14 @@ public class InputManager : MonoBehaviour
         MouseYOut = Input.GetAxis(MouseYoutName);
         MouseWheelScroll = Input.GetAxis(MouseScrollName);
         MousePosition = Input.mousePosition;
+        #endregion
+
+        #region 조합 입력 관련
+        SelectObject = Convert.ToBoolean(Convert.ToInt32(Input.GetButton(ShiftName)) * Convert.ToInt32(Input.GetButtonDown(MouseLeftClickName)));
+        #endregion
+
+        #region 키보드 입력 관련
+        CtrlKeyDown = Input.GetButtonDown(CtrlName);
         #endregion
 
         #region 가리키는 블록 업데이트
