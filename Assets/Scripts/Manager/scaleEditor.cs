@@ -54,6 +54,7 @@ public class scaleEditor : MonoBehaviour
             
             
         }
+        //오브젝트의 정보를 가져온다.
         if (manager.PointBlock)
         {
             Debug.Log($"Position: {manager.PointBlockInformation.position}\n" +
