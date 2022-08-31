@@ -123,13 +123,6 @@ public class InputManager : MonoBehaviour
         {
             //가리키는 Object 담기
             PointBlock = hit.collider.gameObject;
-
-            //구조체로 정보 담기
-            BlockInfo block;
-            block.position = PointBlock.gameObject.transform.position;
-            block.rotation = PointBlock.gameObject.transform.rotation.eulerAngles;
-            block.scale = PointBlock.gameObject.transform.localScale;
-            PointBlockInformation = block;
             
             //hitPoint 전달
             ObjectHitPoint = hit.point;
