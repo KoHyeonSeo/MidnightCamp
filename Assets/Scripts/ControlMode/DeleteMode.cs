@@ -21,7 +21,7 @@ public class DeleteMode : MonoBehaviour
             deleteMode = true;
             deleteObject = input.PointBlock;
         }
-        Debug.Log(deleteMode);
+        //Debug.Log(deleteMode);
         if (deleteMode)
         {
             if (input.DeleteKeyDown)
@@ -32,6 +32,11 @@ public class DeleteMode : MonoBehaviour
                 deleteMode = false;
                 deleteObject = null;
             }
+            //else if (!input.DeleteKeyDown && Input.anyKeyDown)
+            //{
+            //    deleteMode = false;
+            //    deleteObject = null;
+            //}
         }
         if (input.CancelKeyDown)
         {
