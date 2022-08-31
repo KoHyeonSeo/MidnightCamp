@@ -26,7 +26,7 @@ public class Panel_Object_Controller : MonoBehaviour
     #endregion
 
     // 각 오브젝트 타입 별 버튼
-    public Button Btn_Object;
+    
     public Button Btn_Tetrahedron;
     public Button Btn_Hexahedron;
     public Button Btn_Sphere;
@@ -43,7 +43,7 @@ public class Panel_Object_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Btn_Object.gameObject.SetActive(true);
+        
     }
 
     // Update is called once per frame
@@ -52,11 +52,7 @@ public class Panel_Object_Controller : MonoBehaviour
         
     }
 
-    public void Active_Object_Control_Panel()
-    {
-        // 해당 패널만 활성화 시키고, 나머지 패널은 활성화 시키지 않는다.
-        Btn_Object.gameObject.SetActive(true);
-    }
+
     public void Create_Tetrahedron()
     {
         Instantiate(obj, transform.position, Quaternion.identity, root);
