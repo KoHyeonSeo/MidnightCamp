@@ -16,6 +16,8 @@ public class InputManager : MonoBehaviour
     public const string ShiftName = "Shift";
     public const string DeleteName = "Delete";
     public const string CancelName = "Cancel";
+    public const string HorizontalName = "Horizontal";
+    public const string VerticalName = "Vertical";
 
     [SerializeField] private float mouseZMaxDistance = 950f;
     private RaycastHit hit;
@@ -53,7 +55,19 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public Vector3 MousePosition { get; private set; }
     #endregion
+
     #region 키보드 관련 프로퍼티
+
+    /// <summary>
+    /// 키보드 좌: -1, 우: 1
+    /// </summary>
+    public float Horizontal { get; private set; }
+
+    /// <summary>
+    /// 키보드 하: -1, 상: 1
+    /// </summary>
+    public float Vertical { get; private set; }
+
     /// <summary>
     /// Ctrl누르면, true를 반환 (GetButtonDown)
     /// </summary>
@@ -128,6 +142,8 @@ public class InputManager : MonoBehaviour
         CtrlKeyDown = Input.GetButtonDown(CtrlName);
         DeleteKeyDown = Input.GetButtonDown(DeleteName);
         CancelKeyDown = Input.GetButtonDown(CancelName);
+        Horizontal = Input.GetAxis(HorizontalName);
+        Vertical = Input.GetAxis(VerticalName);
         #endregion
 
         #region 가리키는 블록 업데이트
