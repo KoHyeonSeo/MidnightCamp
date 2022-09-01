@@ -6,8 +6,6 @@ public class scaleEditor : MonoBehaviour
 {
     
     InputManager manager;
-    GameObject objectToScale;
-    [SerializeField]List<GameObject> objectToScales = new List<GameObject>();
     Vector3 surface;
     bool isClicked;
     bool oneClick;
@@ -30,15 +28,15 @@ public class scaleEditor : MonoBehaviour
 
         #region 마우스 커서가 오브젝트를 눌렀을 때 (단일 오브젝트)
         // 마우스 클릭하면 화면상의 오브젝트를 선택하는 구문
-        AddObject();
-        if (manager.MouseLeftClick)
+
+        if (!manager.SelectObject&&manager.MouseLeftClick)
         {
             // 만약 PointerBlock 이 존재한다면 editor 모드 시작
-
-
-               
-                
+            if (!isClicked)
+            {
+                surface = manager.ObjectHitNormal;
                 isClicked = true;
+            }
             
             //만약 기준 벡터와 클릭한 노멀벡터의 외적값을 구할 수있다면
 
@@ -47,14 +45,13 @@ public class scaleEditor : MonoBehaviour
             {
                 //꾹 누른상태에서 2초 지났을 때 스케일모드 작동
                 //여기서 마우스커서값과 normal 값의 내적을 비교한다.
-                FindDir(objectToScales[0].transform, surface);
+                FindDir(manager.list[0].transform, surface);
                 StartCoroutine(ScaleObjs());
             }
         } 
         else
         {
             StopAllCoroutines();
-            objectToScales.Clear();
             curTime = 0;
             isClicked = false;
         }
@@ -136,22 +133,22 @@ public class scaleEditor : MonoBehaviour
     }
     IEnumerator ScaleObjs()
     {
-        for (int i = 0; i < objectToScales.Count; i++)
+        for (int i = 0; i < manager.list.Count; i++)
         {
 
             if (manager.MouseWheelScroll > 0)
             {
-                objectToScales[i].transform.localScale += opposite * toScaleVec * multiplier;
-                objectToScales[i].transform.position += surface * (multiplier * 0.5f);
+                manager.list[i].transform.localScale += opposite * toScaleVec * multiplier;
+                manager.list[i].transform.position += surface * (multiplier * 0.5f);
             }
             else if (manager.MouseWheelScroll < 0)
             {
-                if (!(objectToScales[i].transform.localScale.x <= 0.1f
-                    || objectToScales[i].transform.localScale.y <= 0.1f
-                    || objectToScales[i].transform.localScale.z <= 0.1f))
+                if (!(manager.list[i].transform.localScale.x <= 0.1f
+                    || manager.list[i].transform.localScale.y <= 0.1f
+                    || manager.list[i].transform.localScale.z <= 0.1f))
                 {
-                    objectToScales[i].transform.localScale -= opposite * toScaleVec * multiplier;
-                    objectToScales[i].transform.position -= surface * (multiplier * 0.5f);
+                    manager.list[i].transform.localScale -= opposite * toScaleVec * multiplier;
+                    manager.list[i].transform.position -= surface * (multiplier * 0.5f);
                 }
                 else
                 { } 
@@ -160,41 +157,6 @@ public class scaleEditor : MonoBehaviour
         }
         yield return null;    
     }
-    void AddObject()
-    {
-        //만약 ctrl 키가 눌러진 상태이면 리스트에 지속적으로 업로드 가능 
-        if (manager.MouseLeftClick&&!isClicked)
-        {
-            objectToScales.Add(manager.PointBlock);
-            //만약 중복선택했을 경우 리스트에 넣지 않는다.   
-            surface = manager.ObjectHitNormal;
-            isClicked = true;
-        }
-        if (manager.MouseLeftClick && manager.CtrlKeyDown)
-        {
-            //만약 중복선택했을 경우 리스트에 넣지 않는다.
-            objectToScales.Add(manager.PointBlock);
-            //만약 중복선택했을 경우 리스트에 넣지 않는다.   
-            oneClick = true;
-
-        }
-        else
-        {
-            oneClick = false;
-        }
-        for (int i = 0; i < objectToScales.Count; i++)
-        {
-            if (manager.PointBlock.GetInstanceID() == objectToScales[i].GetInstanceID())
-            {
-                print("중복");
-                //objectToScales.Remove(manager.PointBlock);
-            }
-            else
-            {
-               // objectToScales.Add(manager.PointBlock);
-            }
-        }
-
-
-    }
+   
+    
 }
