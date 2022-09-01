@@ -17,4 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LHE_Scenes/LHE_2DScene.unity
     guid: 6d4291ae957014547a1d8343c421d161
-  m_configObjects: {}
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: bbf5b81cd1f235d40b5efe56629beeb7, type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 5af20e3edd2fcf44fa499ecdbada74cc, type: 2}
+    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 69b5250d2e13cfa4b96b4620ab553ebb, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 806a0d1bc40402347a5504885e298d1d, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 063ea31eebe82574eb0b19dc38bc642b, type: 2}

@@ -103,7 +103,7 @@ public string ProjectName
 
     private void Start()
     {
-        LoadProject();
+        /*LoadProject();*/
     }
 
     // 바이트 배열을 String으로 변환 
@@ -119,7 +119,10 @@ public string ProjectName
         byte[] StrByte = Encoding.UTF8.GetBytes(str);
         return StrByte;
     }
-
+    public void OnClickLoad()
+    {
+        LoadProject();
+    }
     public void OnClickSave()
     {
         SaveProject();
