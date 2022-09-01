@@ -187,16 +187,22 @@ public class InputManager : MonoBehaviour
                     isOnce = true;
                     if (!list.Contains(PointBlock))
                     {
+                        PointBlock.GetComponent<Outline>().enabled = true;
                         list.Add(PointBlock);
                     }
                     else
                     {
+                        PointBlock.GetComponent<Outline>().enabled = false;
                         list.Remove(PointBlock);
                     }
                 }
             }
             else if (MouseLeftClick && !PointBlock)
             {
+                for(int i = 0;i<list.Count; i++)
+                {
+                    list[i].GetComponent<Outline>().enabled = false;
+                }
                 list.Clear();
                 isOnce = false;
             }
