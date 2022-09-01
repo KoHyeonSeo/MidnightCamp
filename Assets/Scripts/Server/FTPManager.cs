@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Net;
 using System.IO;
 using System.Threading.Tasks;
-
+using System.Text;
 
 public class FTPManager : MonoBehaviour
 {
@@ -24,6 +24,14 @@ public class FTPManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+
+    /*private async void Start()
+    {
+        string filePath = "info/f3962c8c-1579-4fbb-a73b-bacf22152fe5.json";
+        byte[] test = await FtpDownloadJson(filePath);
+        string str = Encoding.Default.GetString(test);
+        print(str);
+    }*/
 
     public Task FtpUpload(string filePath, byte[] data)
     {
@@ -48,7 +56,37 @@ public class FTPManager : MonoBehaviour
         return Task.CompletedTask;
     }
 
-    public async Task<Texture2D> FtpDownloadImage(string filePath)
+    public Task<byte[]> FtpDownloadJson(string filePath)
+    {
+        FtpWebRequest ftpWebRequest = (FtpWebRequest)WebRequest.Create(serverPath + filePath);
+        ftpWebRequest.Credentials = new NetworkCredential(m_UserName, m_Password);
+        ftpWebRequest.Method = WebRequestMethods.Ftp.DownloadFile;
+
+        byte[] data = null;
+        
+        using (WebResponse response = ftpWebRequest.GetResponse())
+        using (Stream responseStream = response.GetResponseStream())
+        {
+            //byte[] data = null;
+
+            if (responseStream != null)
+            {
+                byte[] buffer = new byte[16 * 1024];
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    int read;
+                    while ((read = responseStream.Read(buffer, 0, buffer.Length)) > 0)
+                    {
+                        ms.Write(buffer, 0, read);
+                    }
+                    data = ms.ToArray();
+                }
+            }
+        }
+        return Task.FromResult(data);
+    }
+
+    public Task<Texture2D> FtpDownloadImage(string filePath)
     {
         FtpWebRequest ftpWebRequest = (FtpWebRequest)WebRequest.Create(serverPath + filePath);
         ftpWebRequest.Credentials = new NetworkCredential(m_UserName, m_Password);
@@ -77,7 +115,7 @@ public class FTPManager : MonoBehaviour
                 tex.LoadImage(data);
             }
         }
-        return tex;
+        return Task.FromResult(tex);
     }
 
     public Texture2D BytesToTexture2D(byte[] imageBytes)

@@ -167,11 +167,6 @@ public string ProjectName
         return filePath;
     }
 
-    /*Task<string> DownloadJson(string filePath)
-    {
-        //FTPManager.Instance.FtpUpload(filePath, ByteToString(json));
-    }*/
-
     async Task<string> UploadTexture(Texture2D texture)
     {
         Guid uniqueId = Guid.NewGuid();
@@ -186,6 +181,24 @@ public string ProjectName
         string filePath = "normal/" + uniqueId.ToString() + ".png";
         await FTPManager.Instance.FtpUpload(filePath, texture.GetRawTextureData());
         return filePath;
+    }
+
+    async Task<string> DownloadJson(string filePath)
+    {
+        byte[] bytes = await FTPManager.Instance.FtpDownloadJson(filePath);
+        return ByteToString(bytes);
+    }
+
+    async Task<Texture2D> DownloadTexture(string filePath)
+    {
+        Texture2D texture = await FTPManager.Instance.FtpDownloadImage(filePath);
+        return texture;
+    }
+
+    async Task<Texture2D> DownloadNormal(string filePath)
+    {
+        Texture2D texture = await FTPManager.Instance.FtpDownloadImage(filePath);
+        return texture;
     }
 
     /*private IEnumerator Upload(Texture2D texture, System.Action<string> OnCompleteUpload)
