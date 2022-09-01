@@ -25,6 +25,7 @@ public class PanelChanger : MonoBehaviour
     public GameObject Panel_Object;
     public GameObject Panel_Color;
     
+    public InputManager input;
     // 색상값 입력필드
     public GameObject Input_Red_Value;
     public GameObject Input_Green_Value;
@@ -39,6 +40,9 @@ public class PanelChanger : MonoBehaviour
     
     // 색상값을 저장할 색상변수
     public Color color_info;
+
+    // ColorPicker 대상 이미지
+    public Texture2D HSV_img;
 
     // Start is called before the first frame update
     void Start()
@@ -66,25 +70,37 @@ public class PanelChanger : MonoBehaviour
             TMP_InputField tmpInputField_V = Input_Blue_Value.GetComponent<TMP_InputField>();
             TMP_InputField tmpInputField_A = Input_A_transParant_Value.GetComponent<TMP_InputField>();
 
+
+
             if (tmpInputField_R.text.Length > 0)
             {
                 Red = float.Parse(Input_Red_Value.GetComponent<TMP_InputField>().text);
             }
             if (tmpInputField_G.text.Length > 0)
             {
-                Red = float.Parse(Input_Green_Value.GetComponent<TMP_InputField>().text);
+                Green = float.Parse(Input_Green_Value.GetComponent<TMP_InputField>().text);
             }
             if (tmpInputField_V.text.Length > 0)
             {
-                Red = float.Parse(Input_Blue_Value.GetComponent<TMP_InputField>().text);
+                Blue = float.Parse(Input_Blue_Value.GetComponent<TMP_InputField>().text);
             }
             if (tmpInputField_A.text.Length > 0)
             {
-                Red = float.Parse(Input_A_transParant_Value.GetComponent<TMP_InputField>().text);
+                A_Transparant = float.Parse(Input_A_transParant_Value.GetComponent<TMP_InputField>().text);
             }            
 
-            // 1. RGVA값을 저장함.
+            // 1. RGBA값을 저장함.(InputField 의 RGBA 값을 저장함)
             color_info = new Color(Red / 255f, Green / 255f, Blue / 255f, A_Transparant / 255f);
+
+            // // 1. 만약 마우스로, 해당하는 이미지를 클릭하면
+            // if (Input.GetButtonDown("Fire1"))
+            // {
+            //     // 1. ColorPicker의 좌표(x,y)의 색상값을 가져온다.
+            //     
+            //     color_info = HSV_img.GetPixel((int)input.MousePosition.x, (int)input.MousePosition.y);
+            //     // 2. 그리고 해당하는 색상값의 R,G,B,A를 각각 Red, Green, Blue, A_Transparant 에 넣어준다.
+            // }
+
         }
         
     }
@@ -112,10 +128,10 @@ public class PanelChanger : MonoBehaviour
         Panel_Color.gameObject.SetActive(true);
 
         // 패널에 해당하는 상태로 전환한다.
-        if (Panel_Color.activeSelf == true)
-        {
-            GameManager.instance.curState = GameManager.Mode.ColorChange;
-        }    
+        GameManager.instance.curState = GameManager.Mode.ColorChange;
+
+
+
     }
     public void Active_Scale_Mode()
     {
