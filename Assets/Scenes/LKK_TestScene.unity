@@ -622,6 +622,11 @@ MonoBehaviour:
   Panel_Object: {fileID: 466889772722963544}
   Panel_Color: {fileID: 961236708}
   Color_Info: {fileID: 0}
+  Input_Red_Value: {fileID: 1594954220}
+  Input_Green_Value: {fileID: 927212502}
+  Input_Blue_Value: {fileID: 1804247097}
+  Input_A_transParant_Value: {fileID: 1222424879}
+  color_info: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &723166940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,6 +814,121 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802031174}
   m_CullTransparentMesh: 1
+--- !u!1 &856531074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 856531081}
+  - component: {fileID: 856531080}
+  - component: {fileID: 856531079}
+  - component: {fileID: 856531078}
+  - component: {fileID: 856531077}
+  - component: {fileID: 856531076}
+  - component: {fileID: 856531075}
+  m_Layer: 0
+  m_Name: System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &856531075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856531074}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83299340b0b37cb4b8d63e4b4764a7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 2100000, guid: fbd5c5af5923a6e4989db4fea5766470, type: 2}
+--- !u!114 &856531076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856531074}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74715f5201732db48940ac2f2427cef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 1
+  multiplier: 0.1
+--- !u!114 &856531077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856531074}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c458b5c6040484e8ecde443f721d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &856531078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856531074}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add8c15d8af1a38479353075bb19505c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 4
+--- !u!114 &856531079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856531074}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2cc10cdaba7ce448ceab031c31a742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &856531080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856531074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e995e2142b575f4983fdc40487564df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseZMaxDistance: 950
+  list: []
+--- !u!4 &856531081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856531074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.902803, y: 12.064894, z: 8.96875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &888262591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3259,7 +3379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curState: 0
-  system: {fileID: 0}
+  system: {fileID: 856531074}
 --- !u!4 &1833866990
 Transform:
   m_ObjectHideFlags: 0
