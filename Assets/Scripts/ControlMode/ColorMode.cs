@@ -7,8 +7,7 @@ public class ColorMode : MonoBehaviour
     private InputManager input;
     private bool isOnce = false;
 
-    //Test용
-    [SerializeField] private Material mat;
+    [SerializeField] private PanelChanger mat;
     
     //UI에게서 정보를 가져와서 선택된 오브젝트에 머티리얼을 바꿔주면 된다!
 
@@ -30,7 +29,7 @@ public class ColorMode : MonoBehaviour
                 {
                     //UI에게서 머티리얼 정보를 받아서 적용
                     //이 코드는 Test용
-                    input.list[i].GetComponent<MeshRenderer>().material = mat;
+                    input.list[i].GetComponent<MeshRenderer>().material.color = mat.color_info;
                 }
             }
         }
