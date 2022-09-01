@@ -64,20 +64,24 @@ public class Panel_Object_Controller : MonoBehaviour
     {        
         GameObject hexa = Instantiate(obj, transform.position, Quaternion.identity, root);
         hexa.GetComponent<MeshFilter>().mesh = cube;
+        hexa.transform.position = new Vector3(0, 1, 0);
     }
     public void Create_Sphere()
     {
         GameObject sph = Instantiate(obj, transform.position, Quaternion.identity, root);
         sph.GetComponent<MeshFilter>().mesh = sphere;
+        sph.transform.position = new Vector3(0, 1, 0);
     }
     public void Create_Capsule()
     {
         GameObject cap = Instantiate(obj, transform.position, Quaternion.identity, root);
         cap.GetComponent<MeshFilter>().mesh = capsule;
+        cap.transform.position = new Vector3(0, 1, 0);
     }
     public void Create_Cylinder()
     {
         GameObject cylin = Instantiate(obj, transform.position, Quaternion.identity, root);
         cylin.GetComponent<MeshFilter>().mesh = cyilinder;
+        cylin.transform.position = new Vector3(0, 1, 0);
     }
 }

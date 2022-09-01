@@ -137,7 +137,7 @@ public class InputManager : MonoBehaviour
         #endregion
 
         #region 조합 입력 관련
-        SelectObject = Input.GetKey(KeyCode.LeftShift);
+        SelectObject = Input.GetButton("Shift");
         #endregion
 
         #region 키보드 입력 관련
@@ -154,9 +154,11 @@ public class InputManager : MonoBehaviour
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mousepos);
         Vector3 screenPoint = Camera.main.ScreenToWorldPoint(MousePosition);
         Vector3 dir = worldPoint - screenPoint;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(screenPoint, dir.normalized * mouseZMaxDistance, Color.red);
         LayerMask layer = 1 << LayerMask.NameToLayer("Grid");
         if (Physics.Raycast(screenPoint, dir.normalized * mouseZMaxDistance, out hit, mouseZMaxDistance, ~layer))
+        //if(Physics.Raycast(ray, out hit, mouseZMaxDistance, ~layer))
         {
             //가리키는 Object 담기
             PointBlock = hit.collider.gameObject;
