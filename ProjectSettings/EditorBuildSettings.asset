@@ -17,4 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LHE_Scenes/LHE_2DScene.unity
     guid: 6d4291ae957014547a1d8343c421d161
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 806a0d1bc40402347a5504885e298d1d, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 063ea31eebe82574eb0b19dc38bc642b, type: 2}

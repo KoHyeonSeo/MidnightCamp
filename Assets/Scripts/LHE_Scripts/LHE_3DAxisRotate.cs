@@ -9,6 +9,8 @@ public class LHE_3DAxisRotate : MonoBehaviour
     public float leftRightSpeed = 400;
     public float upDownSpeed = 200;
 
+    public float axisPos = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +18,15 @@ public class LHE_3DAxisRotate : MonoBehaviour
         rotY = transform.rotation.y; // 좌우
 
         // 시작위치
-        transform.position = new Vector3(LHE_CalculateMaxDistance.Instance.minX - 3, LHE_CalculateMaxDistance.Instance.averageY, LHE_CalculateMaxDistance.Instance.averageZ);
+        transform.position = new Vector3(LHE_CalculateMaxDistance.Instance.minX - axisPos, LHE_CalculateMaxDistance.Instance.averageY, LHE_CalculateMaxDistance.Instance.averageZ);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //transform.position = Camera.main.transform.position + new Vector3(-8.7f, -2.2f, -10);
+        
         if (Input.GetButton("Fire2"))
         {
             float mx = Input.GetAxis("Mouse X");

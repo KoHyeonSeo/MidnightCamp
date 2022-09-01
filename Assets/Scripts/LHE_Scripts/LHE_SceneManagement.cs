@@ -29,11 +29,13 @@ public class LHE_SceneManagement : MonoBehaviour
 
     public void ThreeDimentionalViewLoad()
     {
+        print("3D");
         SceneManager.LoadScene("LHE_3DScene");
     }
 
     public void TwoDimentionalViewLoad()
     {
+        print("2D");
         SceneManager.LoadScene("LHE_2DScene");
     }
 }
