@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
         Move,
         Rotate,
         Delete,
-        ColorChange
+        ColorChange,
+        ScaleEdit,
     }
     /// <summary>
     /// 현재 모드
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
     private DragBlock movingScript;
     private DeleteMode deleteScript;
     private RotationBlock rotateScript;
+    private scaleEditor scaleScript;
 
     private Mode preState = Mode.Move;
 
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
         movingScript = system.GetComponent<DragBlock>();
         deleteScript = system.GetComponent<DeleteMode>();
         rotateScript = system.GetComponent<RotationBlock>();
+        scaleScript = system.GetComponent<scaleEditor>();
         ChangeState();
     }
 
@@ -73,6 +76,9 @@ public class GameManager : MonoBehaviour
             case Mode.ColorChange:
                 ColorChage();
                 break;
+            case Mode.ScaleEdit:
+                ScaleEdit();
+                break;
         }
     }
     void Move()
@@ -80,21 +86,31 @@ public class GameManager : MonoBehaviour
         movingScript.enabled = true;
         rotateScript.enabled = false;
         deleteScript.enabled = false;
+        scaleScript.enabled = false;
     }
     void Rotate()
     {
         rotateScript.enabled = true;
         movingScript.enabled = false;
         deleteScript.enabled = false;
+        scaleScript.enabled = false;
     }
     void Delete()
     {
         deleteScript.enabled = true;
         movingScript.enabled = false;
         rotateScript.enabled = false;
+        scaleScript.enabled = false;
     }
     void ColorChage()
     {
 
+    }
+    void ScaleEdit()
+    {
+        scaleScript.enabled = true;
+        deleteScript.enabled = false;
+        movingScript.enabled = false;
+        rotateScript.enabled = false;
     }
 }
