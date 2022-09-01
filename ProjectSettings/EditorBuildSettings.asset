@@ -5,24 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Hyeon_TestScene.unity
-    guid: e56a2837d8f48fa4888bb964694d0874
-  - enabled: 0
-    path: Assets/Scenes/LHE_Scenes/LHE_ObjectScene.unity
-    guid: 49200d5d40ffb8d4cb7ea401ebfabab8
-  - enabled: 0
-    path: Assets/Scenes/LHE_Scenes/LHE_3DScene.unity
-    guid: 66ba2a9875144f94bb76a29fd3a113dc
-  - enabled: 0
-    path: Assets/Scenes/LHE_Scenes/LHE_2DScene.unity
-    guid: 6d4291ae957014547a1d8343c421d161
   - enabled: 1
-    path: Assets/Scenes/StartScene.unity
-    guid: 243557f2d4c8de5458c8c2005ef3c662
-  - enabled: 1
-    path: Assets/Scenes/EditorScene.unity
-    guid: 2f03a42e5ee4df744a629edf26e25fef
+    path: Assets/Scenes/CSJ_AR.unity
+    guid: 5b195b9f395a71442b006a6b8a8fd0ed
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: bbf5b81cd1f235d40b5efe56629beeb7, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 5af20e3edd2fcf44fa499ecdbada74cc, type: 2}
