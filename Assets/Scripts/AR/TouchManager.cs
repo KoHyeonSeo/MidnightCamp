@@ -10,6 +10,10 @@ public class TouchManager : MonoBehaviour
     ARRaycastManager raycastManager;
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
+    public GameObject block;
+
+    public GameObject root;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +32,9 @@ public class TouchManager : MonoBehaviour
         {
             if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
             {
-                Instantiate(placeObject, hits[0].pose.position, hits[0].pose.rotation);
+                //Instantiate(block, hits[0].pose.position, hits[0].pose.rotation);
+                root.transform.position = hits[0].pose.position;
+                root.transform.rotation = hits[0].pose.rotation;
             }
         }
     }
