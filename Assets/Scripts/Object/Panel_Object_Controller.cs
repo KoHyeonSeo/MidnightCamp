@@ -32,7 +32,6 @@ public class Panel_Object_Controller : MonoBehaviour
     public Button Btn_Sphere;
     public Button Btn_Capsule;
     public Button Btn_Cylinder;
-    public Button Btn_Plane;
 
     // 오브젝트 생성을 위한 변수
     public GameObject obj;
@@ -73,10 +72,7 @@ public class Panel_Object_Controller : MonoBehaviour
     {
         Instantiate(obj, transform.position, Quaternion.identity, root);
     }
-    public void Create_Plane()
-    {
-        Instantiate(obj, transform.position, Quaternion.identity, root);
-    }
+
 
 
 }
