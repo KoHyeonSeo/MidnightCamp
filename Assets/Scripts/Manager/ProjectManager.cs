@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-using System.IO;
 using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using System;
@@ -23,18 +19,15 @@ public class ProjectManager : MonoBehaviour
     public int projectVersion;
     public string projectDescription;
 
-    public Texture front;
-    public Texture left;
-    public Texture right;
-    public Texture rear;
-    public Texture up;
+    Texture front;
+    Texture left;
+    Texture right;
+    Texture rear;
+    Texture up;
 
-    string serverPath = "ftp://metaverse.ohgiraffers.com";
+    public string serverPath = "ftp://metaverse.ohgiraffers.com";
 
     public GameObject root;
-
-    // trash
-    public GameObject trash;
 
     public struct Thumbnail
     {
@@ -44,7 +37,8 @@ public class ProjectManager : MonoBehaviour
     [System.Serializable]
     public struct BlockData
     {
-        public int id;
+        public int rootID;
+        public int ID;
         public string info_url;
         public string texture_url;
         public string normal_url;
@@ -57,11 +51,11 @@ public class ProjectManager : MonoBehaviour
         public string name;
         public int version;
         public string description;
-        public string front;
-        public string left;
-        public string right;
-        public string rear;
-        public string up;
+        public string img_front_url;
+        public string img_left_url;
+        public string img_right_url;
+        public string img_rear_url;
+        public string img_up_url;
         public BlockData[] blocks;
     }
 
@@ -98,9 +92,7 @@ public string ProjectName
 
     private void Start()
     {
-        projectName = "New Project";
-        projectVersion = 1;
-        projectDescription = "New Project Description";
+        
     }
 
     // 바이트 배열을 String으로 변환 
@@ -122,34 +114,10 @@ public string ProjectName
         SaveProject();
     }
 
-    /*public void Post()
-    {
-        string uri = "http://test.co.kr/method";
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-        request.Method = "POST";
-        request.ContentType = "application/json; utf-8";
-
-        using (var streamWriter = new StreamWriter(request.GetRequestStream())) //전송
-        {
-            string json = "{\"type\":\"C\", \"title\": \"aa\", \"starttime\":\"" + pRdeDateInfo[0].StartDate.Replace("-", "")"}]}";
-            streamWriter.Write(json);
-        }
-
-        var response = (HttpWebResponse)request.GetResponse(); //응답
-        using (var streamReader = new StreamReader(response.GetResponseStream()))
-        {
-            var apiResult = streamReader.ReadToEnd();
-            JObject jobj = JObject.Parse(apiResult);
-            if (jobj["SCHEDULE"]["code"].ToString() == "00")
-            {
-                roomNumber = jobj["SCHEDULE"]["conferenceid"].ToString();
-            }
-        }
-    }*/
-
     public async void SaveProject()
     {
         ProjectData projectData = new ProjectData();
+        projectData.user = user;
         projectData.name = projectName;
         projectData.version = projectVersion;
         projectData.description = projectDescription;
@@ -159,7 +127,8 @@ public string ProjectName
         
         for (int i = 0; i < projectData.blocks.Length; i++)
         {
-            projectData.blocks[i].id = blockHolders[i].GetID();
+            projectData.blocks[i].rootID = blockHolders[i].GetRootId();
+            projectData.blocks[i].ID = blockHolders[i].GetID();
             
             string filePath = await UploadJson(blockHolders[i].ToJson());
             projectData.blocks[i].info_url = filePath;
@@ -183,9 +152,9 @@ public string ProjectName
         }
 
         string json = JsonUtility.ToJson(projectData);
-        Debug.LogAssertion(json);
-
-        // post 추가
+        //mDebug.LogAssertion(json);
+        
+        await HTTPManager.Instance.UploadProject(json);
     }
 
     // Upload Texture
@@ -206,7 +175,7 @@ public string ProjectName
     async Task<string> UploadTexture(Texture2D texture)
     {
         Guid uniqueId = Guid.NewGuid();
-        string filePath = "texture/" + uniqueId.ToString() + ".json";
+        string filePath = "texture/" + uniqueId.ToString() + ".png";
         await FTPManager.Instance.FtpUpload(filePath, texture.GetRawTextureData());
         return filePath;
     }
@@ -214,44 +183,9 @@ public string ProjectName
     async Task<string> UploadNormal(Texture2D texture)
     {
         Guid uniqueId = Guid.NewGuid();
-        string filePath = "normal/" + uniqueId.ToString() + ".json";
+        string filePath = "normal/" + uniqueId.ToString() + ".png";
         await FTPManager.Instance.FtpUpload(filePath, texture.GetRawTextureData());
         return filePath;
-    }
-
-    public async void OnClickUpload()
-    {
-        BlockHolder blockHolder = root.GetComponentInChildren<BlockHolder>();
-
-        Texture2D texture = blockHolder.GetTexture();
-
-        /*StartCoroutine(this.Upload(texture, (result) =>
-        {
-            Debug.Log("성공여부 : " + result);
-        }));*/
-        Guid uniqueId = Guid.NewGuid();
-        await FTPManager.Instance.FtpUpload(uniqueId.ToString() + ".png", texture.GetRawTextureData());
-        Texture2D texture2 = await FTPManager.Instance.FtpDownloadImage(uniqueId.ToString() + ".png");
-        trash.GetComponent<MeshRenderer>().material.mainTexture = texture2;
-    }
-
-    // 추후 삭제
-    void WriteJson(string filePath, string message)
-    {
-        DirectoryInfo directoryInfo = new DirectoryInfo(Path.GetDirectoryName(filePath));
-
-        if (!directoryInfo.Exists)
-        {
-            directoryInfo.Create();
-        }
-
-        FileStream fileStream
-            = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write);
-
-        StreamWriter writer = new StreamWriter(fileStream, System.Text.Encoding.Unicode);
-
-        writer.WriteLine(message);
-        writer.Close();
     }
 
     /*private IEnumerator Upload(Texture2D texture, System.Action<string> OnCompleteUpload)
