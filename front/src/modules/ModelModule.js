@@ -10,11 +10,11 @@ const initialState = [
     }
 ];
 
-export const INIT_MODEL_INFO = 'GROUP/INIT_MODEL_INFO';
-export const SHOW_MODEL_INFO = 'GROUP/SHOW_MODEL_INFO';
-export const SET_MODEL_INFO = 'GROUP/SET_MODEL_INFO';
-export const SET_SEARCH_KEY = 'GROUP/SET_SEARCH_KEY';
-export const SET_SEARCH_TYPE = 'GROUP/SET_SEARCH_TYPE';
+export const INIT_MODEL_INFO = 'MODEL/INIT_MODEL_INFO';
+export const SHOW_MODEL_INFO = 'MODEL/SHOW_MODEL_INFO';
+export const SET_MODEL_INFO = 'MODEL/SET_MODEL_INFO';
+export const SET_SEARCH_KEY = 'MODEL/SET_SEARCH_KEY';
+export const SET_SEARCH_TYPE = 'MODEL/SET_SEARCH_TYPE';
 
 
 const actions = createActions({

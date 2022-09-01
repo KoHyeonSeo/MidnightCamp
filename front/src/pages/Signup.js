@@ -1,12 +1,15 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { signupSuccessAlert } from "../components/items/alertDesign";
 import { INIT_GROUP_INFO, SET_GROUP_INFO } from "../modules/GroupModule";
 
 function Signup() {
 
     const groupInfo = useSelector(state => state.groupReducer);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const onChangeHandler = (e) => {
         dispatch({ type: [SET_GROUP_INFO], payload: e.target})
@@ -16,14 +19,18 @@ function Signup() {
     const onClickHandler = async (e) => {
         const signUpMember = await axios({
             method: 'post',
-            url: 'http://', // 서버 주소로 변경
+            url: //'http://localhost:8888/auth/regist',
+            'http://192.168.1.51:8888/auth/regist', // 서버 주소로 변경
             data: {
-                groupId: groupInfo[0].group_id,
-                groupPwd: groupInfo[0].group_pwd,
+                id: groupInfo[0].group_id,
+                password: groupInfo[0].group_pwd,
+                name: groupInfo[0].group_name
             }
         })
 
-        console.log('회원가입 정보 :', signUpMember)
+        console.log('회원가입 정보 :', signUpMember);
+        signupSuccessAlert();
+        navigate('/');
     }
 
     useEffect(

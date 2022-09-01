@@ -1,11 +1,18 @@
 import axios from "axios";
+import { useCookies } from "react-cookie";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { INIT_GROUP_INFO, SET_GROUP_INFO } from "../modules/GroupModule";
+import { LOGIN } from "../modules/LoginModule";
+import { useNavigate } from "react-router-dom";
+import { loginFailAlert, loginSuccessAlert } from "../components/items/alertDesign";
 function Signin() {
 
     const groupInfo = useSelector(state => state.groupReducer);
+    const loginInfo = useSelector(state => state.loginReducer);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [cookies, setCookie, removeCookie] = useCookies(['']);
 
     const onChangeHandler = (e) => {
         dispatch({ type: [SET_GROUP_INFO], payload: e.target});
@@ -15,14 +22,28 @@ function Signin() {
     const onClickHandler = async (e) => {
         const signInMember = await axios({
             method: 'post',
-            url: 'http://', // 서버 주소로 변경
+            url: //'http://localhost:8888/auth/login',
+            'http://192.168.1.51:8888/auth/login', // 서버 주소로 변경
             data: {
-                groupId: groupInfo[0].group_id,
-                groupPwd: groupInfo[0].group_pwd,
+                id: groupInfo[0].group_id,
+                password: groupInfo[0].group_pwd,
             }
         })
 
         console.log('로그인 정보 :', signInMember)
+
+        // httpOnly 설정
+        setCookie('accessToken', signInMember.data.accessToken, {path: '/', expiresIn: '3d', httpOnly: false});
+        //removeCookie('accessToken')
+        console.log('cookie', cookies.accessToken)
+        console.log(signInMember)
+        if(cookies.accessToken) {
+            dispatch({ type: [LOGIN], payload: groupInfo[0]})
+            loginSuccessAlert(groupInfo[0].group_id);
+            navigate("/");
+        } else {
+            loginFailAlert();
+        }
     }
 
     useEffect(
