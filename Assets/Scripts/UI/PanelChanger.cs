@@ -16,6 +16,7 @@ public class PanelChanger : MonoBehaviour
 {
     public Button Btn_Object;
     public Button Btn_Color;
+    public Button Btn_Scale;
 
     public GameObject Panel_Menu;
     public GameObject Panel_Object;
