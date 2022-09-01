@@ -93,7 +93,8 @@ public class FTPManager : MonoBehaviour
         ftpWebRequest.Method = WebRequestMethods.Ftp.DownloadFile;
 
         // 크기가 너무 작음
-        Texture2D tex = new Texture2D(2, 2);
+        //Texture2D tex = new Texture2D(2, 2);
+        Texture2D tex = new Texture2D(2, 2, TextureFormat.RGBA32, false);
         //print("filePath "+ filePath);
         //print(serverPath + filePath);
         using (WebResponse response = ftpWebRequest.GetResponse())
@@ -113,7 +114,9 @@ public class FTPManager : MonoBehaviour
                     }
                     data = ms.ToArray();
                 }
-                tex.LoadImage(data);
+                //tex.LoadImage(data);
+                tex.LoadRawTextureData(data);
+                tex.Apply();
             }
         }
         return Task.FromResult(tex);
