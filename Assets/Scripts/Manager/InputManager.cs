@@ -85,7 +85,7 @@ public class InputManager : MonoBehaviour
     #region 조합 Input 관련 프로퍼티
 
     /// <summary>
-    /// Left Shift 누르면서 좌클릭을 하면 true 반환
+    /// Left Shift 누르면 true 반환
     /// </summary>
     public bool SelectObject { get; private set; }
     #endregion
@@ -135,7 +135,7 @@ public class InputManager : MonoBehaviour
         #endregion
 
         #region 조합 입력 관련
-        SelectObject = Convert.ToBoolean(Convert.ToInt32(Input.GetButton(ShiftName)) * Convert.ToInt32(Input.GetButtonDown(MouseLeftClickName)));
+        SelectObject = Input.GetKeyDown(KeyCode.LeftShift);
         #endregion
 
         #region 키보드 입력 관련
