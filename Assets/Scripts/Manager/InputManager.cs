@@ -110,6 +110,7 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("1");
         //ObjectHitPoint 간단 사용법
         //if(ObjectHitPoint != Vector3.zero)
         //{
@@ -182,6 +183,7 @@ public class InputManager : MonoBehaviour
         //Shift 누르고 허공 클릭하면 취소
         if (SelectObject)
         {
+            Debug.Log("3");
             if (MouseLeftClick && PointBlock)
             {
                 if (!isOnce)

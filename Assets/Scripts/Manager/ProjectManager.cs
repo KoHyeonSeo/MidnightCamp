@@ -85,7 +85,7 @@ public string ProjectName
     {
         for(int i= 0; i < parent.transform.childCount; i++)
         {
-            Destroy(parent.transform.GetChild(i));
+            Destroy(parent.transform.GetChild(i).gameObject);
         }
     }
     private void Awake()
@@ -103,7 +103,7 @@ public string ProjectName
 
     private void Start()
     {
-        LoadProject();
+        //LoadProject();
     }
 
     // 바이트 배열을 String으로 변환 
