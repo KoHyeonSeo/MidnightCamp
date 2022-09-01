@@ -7,7 +7,6 @@ public class RotationBlock : MonoBehaviour
     [SerializeField] private float power = 4f;
     private InputManager input;
     private bool isOnce = false;
-    private GameObject selectBlock;
     
     private void Start()
     {
@@ -15,23 +14,24 @@ public class RotationBlock : MonoBehaviour
     }
     private void Update()
     {
-        if (input.MouseLeftClick)
+        if (!input.SelectObject && input.MouseLeftClick)
         {
             if (!isOnce)
             {
                 isOnce = true;
-                selectBlock = input.PointBlock;
             }
-            if (selectBlock)
+            for (int i = 0; i < input.list.Count; i++)
             {
-                Vector3 newRotation = selectBlock.transform.rotation.eulerAngles + new Vector3(input.MouseYOut, -input.MouseXOut, 0) * power;
-                selectBlock.transform.rotation = Quaternion.Euler(newRotation);
+                if (input.list[i])
+                {
+                    Vector3 newRotation = input.list[i].transform.rotation.eulerAngles + new Vector3(input.MouseYOut, -input.MouseXOut, 0) * power;
+                    input.list[i].transform.rotation = Quaternion.Euler(newRotation);
+                }
             }
         }
         else
         {
             isOnce = false;
-            selectBlock = null;
         }
     }
 }
