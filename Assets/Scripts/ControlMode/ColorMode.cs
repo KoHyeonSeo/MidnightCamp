@@ -6,7 +6,6 @@ public class ColorMode : MonoBehaviour
 {
     private InputManager input;
     private bool isOnce = false;
-    private GameObject selectObject;
 
     //Test용
     [SerializeField] private Material mat;
@@ -19,21 +18,25 @@ public class ColorMode : MonoBehaviour
     }
     private void Update()
     {
-        if (input.MouseLeftClick && input.PointBlock)
+        if (!input.SelectObject && input.MouseLeftClick && input.PointBlock)
         {
             if (!isOnce)
             {
                 isOnce = true;
-                selectObject = input.PointBlock;
             }
-            //UI에게서 머티리얼 정보를 받아서 적용
-            //이 코드는 Test용
-            selectObject.GetComponent<MeshRenderer>().material = mat;
+            for (int i = 0; i < input.list.Count; i++)
+            {
+                if (input.list[i])
+                {
+                    //UI에게서 머티리얼 정보를 받아서 적용
+                    //이 코드는 Test용
+                    input.list[i].GetComponent<MeshRenderer>().material = mat;
+                }
+            }
         }
         else
         {
             isOnce = false;
-            selectObject = null;
         }
 
     }
