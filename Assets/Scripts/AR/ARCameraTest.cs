@@ -5,7 +5,8 @@ using UnityEngine;
 public class ARCameraTest : MonoBehaviour
 {
     public Camera arCamera;
-    public GameObject GameObject;
+    public GameObject root;
+    public float distance = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,6 @@ public class ARCameraTest : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        GameObject.transform.position = arCamera.transform.position + arCamera.transform.forward * 7;
+        root.transform.position = arCamera.transform.position + arCamera.transform.forward * distance;
     }
 }
