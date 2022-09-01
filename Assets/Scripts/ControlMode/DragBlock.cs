@@ -25,9 +25,9 @@ public class DragBlock : MonoBehaviour
             {
                 if (input.list[i])
                 {
-                    Vector3 newPos = new Vector3(Mathf.Clamp(input.list[i].transform.position.x - hitNormal.z * input.MouseXOut * 0.5f, -20, 20),
-                         Mathf.Clamp(input.list[i].transform.position.y + input.MouseYOut * 0.5f, -20, 20),
-                         Mathf.Clamp(input.list[i].transform.position.z + hitNormal.x * input.MouseXOut * 0.5f, -20, 20));
+                    Vector3 newPos = new Vector3(Mathf.Clamp(input.list[i].transform.position.x - hitNormal.z * input.MouseXOut * 0.2f, -20, 20),
+                         Mathf.Clamp(input.list[i].transform.position.y + input.MouseYOut * 0.2f, -20, 20),
+                         Mathf.Clamp(input.list[i].transform.position.z + hitNormal.x * input.MouseXOut * 0.2f, -20, 20));
 
                     input.list[i].transform.position = newPos;
                 }
