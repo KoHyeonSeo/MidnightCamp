@@ -11,6 +11,7 @@ app.use(cors());
 const authRouter = require('./src/routes/auth-route');
 const modelRouter = require('./src/routes/model-route');
 
+app.use(express.static('public'));
 app.use('/auth', authRouter);
 app.use('/model', modelRouter);
 

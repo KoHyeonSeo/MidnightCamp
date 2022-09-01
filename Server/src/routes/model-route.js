@@ -7,8 +7,7 @@ router.get('/', wrapAsyncContoller(ModelController.searchAllModels));
 router.get('/search', wrapAsyncContoller(ModelController.searchModels));
 router.get('/search/:code', wrapAsyncContoller(ModelController.searchDetailByCode));
 
-router.post('/', wrapAsyncContoller(ModelController.insertModel));
-router.post('/object', wrapAsyncContoller(ModelController.insertObject));
+router.post('/', ModelController.insertModelAndObjects);
 
 
 module.exports = router;

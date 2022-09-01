@@ -13,8 +13,8 @@ function ShowSearchHephaistos() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const searchKey = searchParams.get('searchKey');
-    const searchType = searchParams.get('searchType');
+    const searchKey = searchParams.get('keyword');
+    const searchType = searchParams.get('type');
 
     const onChangeKeyHandler = (e) => {
         dispatch({ type: [SET_SEARCH_KEY], payload: e.target});
@@ -27,7 +27,8 @@ function ShowSearchHephaistos() {
     }
 
     const onClickHandler = () => {
-        navigate(`/hephaistos/search?searchType=${ modelInfo[0].search_type }&searchKey=${ modelInfo[0].search_key }`)
+        console.log(modelInfo[0])
+        navigate(`/hephaistos/search?type=${ modelInfo[0].search_type }&keyword=${ modelInfo[0].search_key }`)
     }
 
     const onKeyUpHandler = () => {
@@ -38,17 +39,11 @@ function ShowSearchHephaistos() {
 
     useEffect(
         () => {
-            console.log(searchKey, searchType)
-            dispatch({ type: [INIT_MODEL_INFO]});
-            //console.log(modelInfo[0])
-            //axios({
-                //method: "get"
-                //url: "URL",
-                //param: {
-                //  searchKey: searchKey
-                //  searchType: search    
-                //} // 안보내도 URL에서 그냥 가져 올 수 있는 정보?
-            //});
+            console.log("ass", searchKey, searchType)
+            //dispatch({ type: [INIT_MODEL_INFO] });
+            //console.log(modelInfo[0]);
+            //axios.get(`http://localhost:8888/model/search?type=${ searchType }&keyword=${ searchKey }`);
+            axios.get(`http://192.168.1.51:8888/model/search?type=${ searchType }&keyword=${ searchKey }`);
         }, [searchKey, searchParams]
     )
 
@@ -63,8 +58,8 @@ function ShowSearchHephaistos() {
                     onKeyUp={ onKeyUpHandler }/>
             <select name='searchType' onChange={ onChangeTypeHandler }>
                 <option value="선택">-- 선택 --</option>
-                <option value="선택">그룹명</option>
-                <option value="선택">모델명</option>
+                <option value="선택">groupId</option>
+                <option value="선택">modelName</option>
             </select>
             <button type='submit' onClick={ onClickHandler }>검색</button>
             <h1 className={ HephaistosStyle.unityApp }>UNITY APP LIST</h1>

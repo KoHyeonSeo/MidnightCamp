@@ -22,7 +22,7 @@ function ShowHephaistos() {
     }
 
     const onClickHandler = () => {
-        navigate(`/hephaistos/search?searchType=${ modelInfo[0].search_type }&searchKey=${ modelInfo[0].search_key }`)
+        navigate(`/hephaistos/search?type=${ modelInfo[0].search_type }&keyword=${ modelInfo[0].search_key }`)
     }
 
     const onKeyUpHandler = () => {
@@ -35,7 +35,8 @@ function ShowHephaistos() {
         () => {
             dispatch({ type: [INIT_MODEL_INFO]});
             //console.log(modelInfo[0])
-            //axios.get('URL')
+            //axios.get('http://localhost:8888/model')
+             axios.get('http://192.168.1.51:8888/model')
         }, []
     )
 

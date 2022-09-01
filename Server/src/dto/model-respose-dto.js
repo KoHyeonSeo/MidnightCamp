@@ -1,6 +1,7 @@
 class ModelDTO { 
     modelCode;
     modelName;
+    modelVersion;
     groupId;
     groupName;
     imgFrontUrl;
@@ -12,6 +13,7 @@ class ModelDTO {
     constructor(data){
         this.modelCode = data.model_code;
         this.modelName = data.model_name;
+        this.modelVersion = data.model_version;
         this.groupId = data.group_id;
         this.groupName = data.group_name;
         this.imgFrontUrl = data.img_front_url;
