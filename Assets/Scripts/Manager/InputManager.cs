@@ -16,9 +16,13 @@ public class InputManager : MonoBehaviour
     public const string ShiftName = "Shift";
     public const string DeleteName = "Delete";
     public const string CancelName = "Cancel";
+    public const string HorizontalName = "Horizontal";
+    public const string VerticalName = "Vertical";
 
     [SerializeField] private float mouseZMaxDistance = 950f;
+    public List<GameObject> list = new List<GameObject>();
     private RaycastHit hit;
+    private bool isOnce = false;
 
 
     #region 마우스 관련
@@ -53,7 +57,19 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public Vector3 MousePosition { get; private set; }
     #endregion
+
     #region 키보드 관련 프로퍼티
+
+    /// <summary>
+    /// 키보드 좌: -1, 우: 1
+    /// </summary>
+    public float Horizontal { get; private set; }
+
+    /// <summary>
+    /// 키보드 하: -1, 상: 1
+    /// </summary>
+    public float Vertical { get; private set; }
+
     /// <summary>
     /// Ctrl누르면, true를 반환 (GetButtonDown)
     /// </summary>
@@ -71,7 +87,7 @@ public class InputManager : MonoBehaviour
     #region 조합 Input 관련 프로퍼티
 
     /// <summary>
-    /// Left Shift 누르면서 좌클릭을 하면 true 반환
+    /// Left Shift 누르면 true 반환 (GetKeyDown)
     /// </summary>
     public bool SelectObject { get; private set; }
     #endregion
@@ -121,13 +137,15 @@ public class InputManager : MonoBehaviour
         #endregion
 
         #region 조합 입력 관련
-        SelectObject = Convert.ToBoolean(Convert.ToInt32(Input.GetButton(ShiftName)) * Convert.ToInt32(Input.GetButtonDown(MouseLeftClickName)));
+        SelectObject = Input.GetKey(KeyCode.LeftShift);
         #endregion
 
         #region 키보드 입력 관련
         CtrlKeyDown = Input.GetButtonDown(CtrlName);
         DeleteKeyDown = Input.GetButtonDown(DeleteName);
         CancelKeyDown = Input.GetButtonDown(CancelName);
+        Horizontal = Input.GetAxis(HorizontalName);
+        Vertical = Input.GetAxis(VerticalName);
         #endregion
 
         #region 가리키는 블록 업데이트
@@ -156,5 +174,41 @@ public class InputManager : MonoBehaviour
         }
         #endregion
 
+        #region 다중 선택 블록 저장
+        //Shift 누르고 블럭 여러개 클릭 시 리스트에 담김
+        //눌렀던 블록을 다시 누르면 List에서 Remove
+        //Shift 누르고 허공 클릭하면 취소
+        if (SelectObject)
+        {
+            if (MouseLeftClick && PointBlock)
+            {
+                if (!isOnce)
+                {
+                    isOnce = true;
+                    if (!list.Contains(PointBlock))
+                    {
+                        PointBlock.GetComponent<Outline>().enabled = true;
+                        list.Add(PointBlock);
+                    }
+                    else
+                    {
+                        PointBlock.GetComponent<Outline>().enabled = false;
+                        list.Remove(PointBlock);
+                    }
+                }
+            }
+            else if (MouseLeftClick && !PointBlock)
+            {
+                for(int i = 0;i<list.Count; i++)
+                {
+                    list[i].GetComponent<Outline>().enabled = false;
+                }
+                list.Clear();
+                isOnce = false;
+            }
+            else
+                isOnce = false;
+        }
+        #endregion
     }
 }

@@ -13,8 +13,8 @@ exports.login = async (req, res, next) => {
         const result = results[0]
         jwt.sign(
             {
-                groupID: result.group_id,
-                groupName: result.group_name
+                id: result.group_id,
+                name: result.group_name
             },
             secret,
             {

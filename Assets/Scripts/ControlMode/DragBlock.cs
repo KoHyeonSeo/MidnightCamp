@@ -7,33 +7,35 @@ public class DragBlock : MonoBehaviour
 {
     private InputManager input;
     private bool isOnce = false;
-    private GameObject selectBlock;
+    private Vector3 hitNormal = Vector3.zero;
     private void Start()
     {
         input = GetComponent<InputManager>();
     }
     private void Update()
     {
-        if (input.MouseLeftClick)
+        if (!input.SelectObject && input.MouseLeftClick)
         {
             if (!isOnce)
             {
                 isOnce = true;
-                selectBlock = input.PointBlock;
+                hitNormal = input.ObjectHitNormal;
             }
-            if (selectBlock)
+            for (int i = 0; i < input.list.Count; i++)
             {
-                Debug.Log(selectBlock);
-                Vector3 newPos = new Vector3(selectBlock.transform.position.x + input.MouseXOut,
-                    selectBlock.transform.position.y + input.MouseYOut,
-                    selectBlock.transform.position.z);
-                selectBlock.transform.position = newPos;
+                if (input.list[i])
+                {
+                    Vector3 newPos = new Vector3(Mathf.Clamp(input.list[i].transform.position.x - hitNormal.z * input.MouseXOut, -20, 20),
+                         Mathf.Clamp(input.list[i].transform.position.y + input.MouseYOut, -20, 20),
+                         Mathf.Clamp(input.list[i].transform.position.z + hitNormal.x * input.MouseXOut, -20, 20));
+
+                    input.list[i].transform.position = newPos;
+                }
             }
         }
         else
         {
             isOnce = false;
-            selectBlock = null;
         }
     }
 }
