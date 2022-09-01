@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hyeon_TestScene.unity
     guid: e56a2837d8f48fa4888bb964694d0874
+  - enabled: 1
+    path: Assets/Scenes/MobileMainScene.unity
+    guid: 59a3ed385aab5514e92e31d25a1a4371
   m_configObjects: {}
