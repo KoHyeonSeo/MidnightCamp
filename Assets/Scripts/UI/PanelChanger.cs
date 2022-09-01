@@ -17,6 +17,9 @@ public class PanelChanger : MonoBehaviour
     public Button Btn_Object;
     public Button Btn_Color;
     public Button Btn_Scale;
+    public Button Btn_Rotate;
+    public Button Btn_Delete;
+    public Button Btn_Move;
 
     public GameObject Panel_Menu;
     public GameObject Panel_Object;
@@ -124,5 +127,17 @@ public class PanelChanger : MonoBehaviour
 
         // 패널에 해당하는 상태로 전환한다.
         GameManager.instance.curState = GameManager.Mode.ScaleEdit;
+    }
+    public void Active_Rotate_Mode()
+    {
+        GameManager.instance.curState = GameManager.Mode.Rotate;
+    }
+    public void Active_Delete_Mode()
+    {
+        GameManager.instance.curState = GameManager.Mode.Delete;
+    }
+    public void Active_Move_Mode()
+    {
+        GameManager.instance.curState = GameManager.Mode.Move;
     }
 }
