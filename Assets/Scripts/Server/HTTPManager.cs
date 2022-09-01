@@ -19,8 +19,7 @@ public class HTTPManager : MonoBehaviour
 
     HttpClient httpClient = new()
     {
-        BaseAddress
-        = new Uri("http://192.168.1.51:8888")
+        BaseAddress = new Uri("http://192.168.1.51:8888")
     };
 
     private void Awake()
@@ -60,6 +59,18 @@ public class HTTPManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public async Task GetProjectList(string jsonData)
+    {
+        using StringContent jsonContent = new(
+            jsonData,
+            Encoding.UTF8,
+            "application/json");
+
+        using HttpResponseMessage response = await httpClient.PostAsync("model", jsonContent);
+
+        var jsonResponse = await response.Content.ReadAsStringAsync();
     }
 
     public async Task Login(string id, string password)
