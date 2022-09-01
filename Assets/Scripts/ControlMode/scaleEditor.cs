@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class scaleEditor : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     InputManager manager;
-    GameObject EditObject;
-    Vector3 area;
+    GameObject objectToScale;
+    [SerializeField]List<GameObject> objectToScales = new List<GameObject>();
+    Vector3 surface;
     bool isClicked;
+    bool oneClick;
     float oldScrollPoint;
+    [SerializeField]float delayTime=1;
     Vector3 oldMousePosition;
-    Vector3 toscaleVec;
-    float multi=1;
+    Vector3 toScaleVec;
+    [SerializeField] float multiplier=0.1f;
+    float opposite=1;
    
     float curTime;
     
@@ -21,83 +25,45 @@ public class scaleEditor : MonoBehaviour
         manager = GetComponent<InputManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-        #region 마우스 커서가 오브젝트를 눌렀을 때
+
+        #region 마우스 커서가 오브젝트를 눌렀을 때 (단일 오브젝트)
         // 마우스 클릭하면 화면상의 오브젝트를 선택하는 구문
+        AddObject();
         if (manager.MouseLeftClick)
         {
             // 만약 PointerBlock 이 존재한다면 editor 모드 시작
-           
-            if (!isClicked)
-            {
-                EditObject = manager.PointBlock;
-                area = manager.ObjectHitNormal;
+
+
+               
+                
                 isClicked = true;
-            }
+            
             //만약 기준 벡터와 클릭한 노멀벡터의 외적값을 구할 수있다면
 
             curTime += Time.deltaTime;
-            if (curTime > 1)
+            if (curTime > delayTime)
             {
                 //꾹 누른상태에서 2초 지났을 때 스케일모드 작동
                 //여기서 마우스커서값과 normal 값의 내적을 비교한다.
-                FindDir(EditObject.transform, area);
-                print(toscaleVec);
-                if (manager.MouseWheelScroll > 0)
-                {
-                    EditObject.transform.localScale += multi * toscaleVec * 0.1f;
-                    EditObject.transform.position += area * 0.05f;
-                }
-                else if (manager.MouseWheelScroll < 0)
-                {
-                    if (EditObject.transform.localScale.x <= 0.1f || EditObject.transform.localScale.y <= 0.1f || EditObject.transform.localScale.z <= 0.1f)
-                    {
-
-                    }
-                    else
-                    {
-                        EditObject.transform.localScale -= multi * toscaleVec * 0.1f;
-                        EditObject.transform.position -= area * 0.05f;
-                    }
-                    
-                }
-
+                FindDir(objectToScales[0].transform, surface);
+                StartCoroutine(ScaleObjs());
             }
         } 
-        //만약 빈 허공을 눌렀을 경우 기존에 눌렀던 오브젝트들을 다시 초기화 한다.
         else
         {
-            EditObject = null;
+            StopAllCoroutines();
+            objectToScales.Clear();
             curTime = 0;
             isClicked = false;
         }
         #endregion
-        #region 오브젝트 스크롤값 변경할때 scale값  변경
-        //if (isClicked && manager.MouseWheelScroll != 0)
-        //{
-
-        //    if (manager.MouseWheelScroll - oldScrollPoint >= 0)
-        //    {
-
-        //        EditObject.transform.localScale += new Vector3(0, 0.1f, 0);
-
-        //    }
-        //    else if (manager.MouseWheelScroll - oldScrollPoint <= 0)
-        //    {
-        //        EditObject.transform.localScale += new Vector3(0, -0.1f, 0);
-        //    }
-            #endregion
-            #region 오브젝트 스케일 변경
-            //마우스 커서가 오브젝트의 면을 클릭했을 때 그 면의 스케일을 변경할 수 있도록 한다.
-
-            #endregion
-
-
-        //}
+        #region 다중 오브젝트를 눌렀을 때
        
+        #endregion
+
+        // 이전 값 업데이트
         oldScrollPoint = manager.MouseWheelScroll;
         oldMousePosition = manager.MousePosition;
     }
@@ -113,43 +79,120 @@ public class scaleEditor : MonoBehaviour
         {
             print(Vector3.Dot(obj.forward, normalVec));
             print("앞");
-            multi = 1;
-            toscaleVec = Vector3.forward;
+            opposite = 1;
+            toScaleVec = Vector3.forward;
         }
         else if (CrossVec==Vector3.zero)
         {
-            print("뒤");
-            multi = -1;
-            toscaleVec = Vector3.back;
+           
+            opposite = -1;
+            toScaleVec = Vector3.back;
             //뒷면
         }
         else if (CrossVec == obj.up)
         {
-            toscaleVec = Vector3.left;
-            print("왼");
-            multi = -1;
+            toScaleVec = Vector3.left;
+            opposite = -1;
             //여기는 왼쪽면
         }
         else if (CrossVec == -obj.up)
         {
-            toscaleVec = Vector3.right;
-            multi = 1;
-            print("오");
+            toScaleVec = Vector3.right;
+            opposite = 1;
             //여기는 오른쪽면
         }
         else if (CrossVec == -obj.right)
         {
-            toscaleVec = Vector3.up;
-            multi = 1;
-            print("위");
+            toScaleVec = Vector3.up;
+            opposite = 1;
             //여기는 윗면
         }
         else if (CrossVec == obj.right)
         {
-            toscaleVec = Vector3.down;
-            multi = -1;
-            print("아래");
+            toScaleVec = Vector3.down;
+            opposite = -1;
             //여기는 아랫면
+        }
+    }
+    void ScaleObj(Transform objectToScale)
+    {
+        if (manager.MouseWheelScroll > 0)
+        {
+            objectToScale.localScale += opposite * toScaleVec * multiplier;
+            objectToScale.position += surface * (multiplier * 0.5f);
+        }
+        else if (manager.MouseWheelScroll < 0)
+        {
+            if (!(objectToScale.localScale.x <= 0.1f
+                || objectToScale.localScale.y <= 0.1f
+                || objectToScale.localScale.z <= 0.1f))
+            {
+                objectToScale.localScale -= opposite * toScaleVec * multiplier;
+                objectToScale.position -= surface * (multiplier * 0.5f);
+            }
+            else
+            { }
+        }
+    }
+    IEnumerator ScaleObjs()
+    {
+        for (int i = 0; i < objectToScales.Count; i++)
+        {
+
+            if (manager.MouseWheelScroll > 0)
+            {
+                objectToScales[i].transform.localScale += opposite * toScaleVec * multiplier;
+                objectToScales[i].transform.position += surface * (multiplier * 0.5f);
+            }
+            else if (manager.MouseWheelScroll < 0)
+            {
+                if (!(objectToScales[i].transform.localScale.x <= 0.1f
+                    || objectToScales[i].transform.localScale.y <= 0.1f
+                    || objectToScales[i].transform.localScale.z <= 0.1f))
+                {
+                    objectToScales[i].transform.localScale -= opposite * toScaleVec * multiplier;
+                    objectToScales[i].transform.position -= surface * (multiplier * 0.5f);
+                }
+                else
+                { } 
+                
+            }
+        }
+        yield return null;    
+    }
+    void AddObject()
+    {
+        //만약 ctrl 키가 눌러진 상태이면 리스트에 지속적으로 업로드 가능 
+        if (manager.MouseLeftClick&&!isClicked)
+        {
+            objectToScales.Add(manager.PointBlock);
+            //만약 중복선택했을 경우 리스트에 넣지 않는다.   
+            surface = manager.ObjectHitNormal;
+            isClicked = true;
+        }
+        if (manager.MouseLeftClick && manager.CtrlKeyDown)
+        {
+            //만약 중복선택했을 경우 리스트에 넣지 않는다.
+            objectToScales.Add(manager.PointBlock);
+            //만약 중복선택했을 경우 리스트에 넣지 않는다.   
+            oneClick = true;
+
+        }
+        else
+        {
+            oneClick = false;
+        }
+        for (int i = 0; i < objectToScales.Count; i++)
+        {
+            if (manager.PointBlock.GetInstanceID() == objectToScales[i].GetInstanceID())
+            {
+                print("중복");
+                //objectToScales.Remove(manager.PointBlock);
+            }
+            else
+            {
+               // objectToScales.Add(manager.PointBlock);
+            }
         }
 
 
