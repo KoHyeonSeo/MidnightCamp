@@ -24,10 +24,10 @@ public class PanelChanger : MonoBehaviour
     SpriteRenderer sr;
     public GameObject Color_Info;
     // 색상값 입력 부
-    public InputField Input_Red_Value;
-    public InputField Input_Green_Value;
-    public InputField Input_Blue_Value;
-    public InputField Input_A_transParant_Value;
+    public GameObject Input_Red_Value;
+    public GameObject Input_Green_Value;
+    public GameObject Input_Blue_Value;
+    public GameObject Input_A_transParant_Value;
     
     // 입력된 색상값을 받을 변수
     float Red;
@@ -39,7 +39,7 @@ public class PanelChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Panel_Menu.gameObject.SetActive(true);
+        Panel_Menu.gameObject.SetActive(true);        
     }
 
     // Update is called once per frame
@@ -56,10 +56,22 @@ public class PanelChanger : MonoBehaviour
             // ==> text -> 드래그 창, 드래그 창 -> text 모두 가능해야 합니다. => 입력이 완료되는 경우, 반대쪽 창을 변경 할 수 있어야 합니다.
 
             // 0. 입력된 RGVA값을 받아와서 해당 변수에 저장한다.
-            Red = float.Parse(Input_Red_Value.text);
-            Green = float.Parse(Input_Green_Value.text);
-            Blue = float.Parse(Input_Blue_Value.text);
-            A_Transparant = float.Parse(Input_A_transParant_Value.text);
+            if (Input_Red_Value.GetComponent<InputField>().text != null)
+            {
+                Red = float.Parse(Input_Red_Value.GetComponent<InputField>().text);
+            }
+            if (Input_Green_Value.GetComponent<InputField>().text != null)
+            {
+                Red = float.Parse(Input_Green_Value.GetComponent<InputField>().text);
+            }
+            if (Input_Blue_Value.GetComponent<InputField>().text != null)
+            {
+                Red = float.Parse(Input_Blue_Value.GetComponent<InputField>().text);
+            }
+            if (Input_A_transParant_Value.GetComponent<InputField>().text != null)
+            {
+                Red = float.Parse(Input_A_transParant_Value.GetComponent<InputField>().text);
+            }
 
             // 1. RGVA값을 저장 할 SpriteRenderer의 sr 변수
             color_info = new Color(Red / 255f, Green / 255f, Blue / 255f, A_Transparant / 255f);
