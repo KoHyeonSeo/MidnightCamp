@@ -20,7 +20,9 @@ public class InputManager : MonoBehaviour
     public const string VerticalName = "Vertical";
 
     [SerializeField] private float mouseZMaxDistance = 950f;
+    public List<GameObject> list = new List<GameObject>();
     private RaycastHit hit;
+    private bool isOnce = false;
 
 
     #region 마우스 관련
@@ -135,7 +137,7 @@ public class InputManager : MonoBehaviour
         #endregion
 
         #region 조합 입력 관련
-        SelectObject = Input.GetKeyDown(KeyCode.LeftShift);
+        SelectObject = Input.GetKey(KeyCode.LeftShift);
         #endregion
 
         #region 키보드 입력 관련
@@ -172,5 +174,35 @@ public class InputManager : MonoBehaviour
         }
         #endregion
 
+        #region 다중 선택 블록 저장
+        //Shift 누르고 블럭 여러개 클릭 시 리스트에 담김
+        //눌렀던 블록을 다시 누르면 List에서 Remove
+        //Shift 누르고 허공 클릭하면 취소
+        if (SelectObject)
+        {
+            if (MouseLeftClick && PointBlock)
+            {
+                if (!isOnce)
+                {
+                    isOnce = true;
+                    if (!list.Contains(PointBlock))
+                    {
+                        list.Add(PointBlock);
+                    }
+                    else
+                    {
+                        list.Remove(PointBlock);
+                    }
+                }
+            }
+            else if (MouseLeftClick && !PointBlock)
+            {
+                list.Clear();
+                isOnce = false;
+            }
+            else
+                isOnce = false;
+        }
+        #endregion
     }
 }
