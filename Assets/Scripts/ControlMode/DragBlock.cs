@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DragBlock : MonoBehaviour
 {
-    [SerializeField] private GameObject camera;
     private InputManager input;
     private bool isOnce = false;
     private GameObject selectBlock;
