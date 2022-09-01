@@ -85,7 +85,7 @@ public class InputManager : MonoBehaviour
     #region 조합 Input 관련 프로퍼티
 
     /// <summary>
-    /// Left Shift 누르면 true 반환
+    /// Left Shift 누르면 true 반환 (GetKeyDown)
     /// </summary>
     public bool SelectObject { get; private set; }
     #endregion

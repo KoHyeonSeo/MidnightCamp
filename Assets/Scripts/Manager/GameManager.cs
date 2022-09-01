@@ -121,5 +121,6 @@ public class GameManager : MonoBehaviour
         deleteScript.enabled = false;
         movingScript.enabled = false;
         rotateScript.enabled = false;
+        colorScript.enabled = false;
     }
 }
