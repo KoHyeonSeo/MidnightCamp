@@ -32,11 +32,13 @@ public class Panel_Object_Controller : MonoBehaviour
     public Button Btn_Sphere;
     public Button Btn_Capsule;
     public Button Btn_Cylinder;
+    [SerializeField] Mesh cube;
+    [SerializeField] Mesh cyilinder;
+    [SerializeField] Mesh sphere;
+    [SerializeField] Mesh capsule;
 
     // 오브젝트 생성을 위한 변수
     public GameObject obj;
-
-    // 
 
     // 루트 폴더의 위치정보를 담기 위한 변수
     public Transform root;
@@ -53,33 +55,29 @@ public class Panel_Object_Controller : MonoBehaviour
         
     }
 
-    // 1. 해당하는 모양의 오브젝트를 생성한다.
-    // 2. 생성하는데 필요한 오브젝트의 정보는 오브젝트들의 정보(Mesh)를 담는 변수에 들어가 있어야 한다.
-    // 3. 변수에 들어가 있는 정보를 바탕으로 오브젝트를 실행하는 함수가 필요하다.
-    // 4. 함수에 내부에서 포지션을 설정해 줄거야.
 
     public void Create_Tetrahedron()
     {
-        GameObject gameObject = Instantiate(obj, transform.position, Quaternion.identity, root);
-        // gameObject.GetComponent<BlockHolder>()
+        Instantiate(obj, transform.position, Quaternion.identity, root);        
     }
     public void Create_Hexahedron()
-    {
-        Instantiate(obj, transform.position, Quaternion.identity, root);
+    {        
+        GameObject hexa = Instantiate(obj, transform.position, Quaternion.identity, root);
+        hexa.GetComponent<MeshFilter>().mesh = cube;
     }
     public void Create_Sphere()
     {
-        Instantiate(obj, transform.position, Quaternion.identity, root);
+        GameObject sph = Instantiate(obj, transform.position, Quaternion.identity, root);
+        sph.GetComponent<MeshFilter>().mesh = sphere;
     }
     public void Create_Capsule()
     {
-        Instantiate(obj, transform.position, Quaternion.identity, root);
+        GameObject cap = Instantiate(obj, transform.position, Quaternion.identity, root);
+        cap.GetComponent<MeshFilter>().mesh = capsule;
     }
     public void Create_Cylinder()
     {
-        Instantiate(obj, transform.position, Quaternion.identity, root);
+        GameObject cylin = Instantiate(obj, transform.position, Quaternion.identity, root);
+        cylin.GetComponent<MeshFilter>().mesh = cyilinder;
     }
-
-
-
 }
