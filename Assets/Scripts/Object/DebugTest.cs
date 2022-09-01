@@ -6,7 +6,8 @@ public class DebugTest : MonoBehaviour
 {
     public GameObject FromObject;
     public GameObject ToObject;
-    
+    public GameObject root;
+
     // Start is called before the first frame update
     void Start()
     {

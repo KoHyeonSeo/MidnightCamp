@@ -1,0 +1,704 @@
+# 3ds Max Wavefront OBJ Exporter v0.94b - (c)2007 guruware
+# File Created: 29.07.2017 15:15:26
+
+newmtl JSB018_Yamato_1944_hull
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\JSB018_Yamato_1944_hull_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JSB018_Yamato_1944_hull_a.dds
+
+newmtl C003_Razlom_old
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\C003_Razlom_old_a.dds
+
+newmtl JM025_Fairled
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM025_Fairled_a.dds
+
+newmtl JM026_Bollards
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM026_Bollards_a.dds
+
+newmtl JM029_Leadsman_Platform
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM029_Leadsman_Platform_a.dds
+
+newmtl JM033_Roller_Fairled
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM033_Roller_Fairled_a.dds
+
+newmtl JM109_Deck_Hatch_11
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM109_Deck_Hatch_11_a.dds
+
+newmtl JM310_Chrysanthemum_full
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM310_Chrysanthemum_full_a.dds
+
+newmtl CM005_Anchor_1
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\CM005_Anchor_1_a.dds
+
+newmtl JGA010_25mm_Type96
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JGA010_25mm_Type96_a.dds
+
+newmtl JGM001_460mm45_Type96_skinned
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JGM001_460mm45_Type96_a.dds
+
+newmtl JGS002_155mm60_Type3_skinned
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JGS002_155mm60_Type3_a.dds
+
+newmtl JM059_Deck_Hatch_8
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM059_Deck_Hatch_8_a.dds
+
+newmtl JM111_Deck_Hatch_13
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM111_Deck_Hatch_13_a.dds
+
+newmtl JM013_Reels_1
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM013_Reels_1_a.dds
+
+newmtl JM112_Gun_Deck_3
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM112_Gun_Deck_3_a.dds
+
+newmtl CM008_Life_Buoy_1
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\CM008_Life_Buoy_1_a.dds
+
+newmtl JM110_Deck_Hatch_12
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM110_Deck_Hatch_12_a.dds
+
+newmtl JM002_Paravane
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM002_Paravane_a.dds
+
+newmtl JSB018_Yamato_1944_deck
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\JSB018_Yamato_1944_deck_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JSB018_Yamato_1944_deck_a.dds
+
+newmtl JD013_Director_Type_98_Mod1
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JD013_Director_Type_98_Mod1_a.dds
+
+newmtl JD014_Director_Type_98_10m
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JD014_Director_Type_98_10m_a.dds
+
+newmtl JD018_Director_Type_98_15m_Yamato
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JD018_Director_Type_98_15m_Yamato_a.dds
+
+newmtl C010_Grid_8
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\C010_Grid_8_a.dds
+	map_d G:\Models\World_of_Warships\Yamato1944\C010_Grid_8_a.dds
+
+newmtl JRS002_Radar_Type_21_2
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JRS002_Radar_Type_21_2_a.dds
+
+newmtl JD019_Machine_Gun_ControlTower
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JD019_Machine_Gun_ControlTower_a.dds
+
+newmtl JD056_MachineGun_Control_Position
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JD056_MachineGun_Control_Position_a.dds
+
+newmtl JD030_Director_Type_95_Mod2
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JD030_Director_Type_95_Mod2_a.dds
+
+newmtl JF017_Rangefinder_4_5m
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JF017_Rangefinder_4_5m_a.dds
+
+newmtl JD022_Director_Type_95_Mod1
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JD022_Director_Type_95_Mod1_a.dds
+
+newmtl JF029_Rangefinder_1_5m_Yamato
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JF029_Rangefinder_1_5m_Yamato_a.dds
+
+newmtl JGS003_127mm40_Type89_Mod_A_skinned
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JGS003_127mm40_Type89_Mod_A_a.dds
+
+newmtl JGA004_25mm_Type96_Triple_1
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JGA004_25mm_Type96_Triple_1_a.dds
+
+newmtl JGS009_127mm40_Type_89_skinned
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JGS009_127mm40_Type_89_a.dds
+
+newmtl JRS007_Radar_Type_22_skinned
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JRS007_Radar_Type_22_a.dds
+
+newmtl JRS010_Radar_Type_13_skinned
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JRS010_Radar_Type_13_a.dds
+
+newmtl Format_0038
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM001_flag_a.dds
+
+newmtl JM009_Signal_Lamp
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM009_Signal_Lamp_a.dds
+
+newmtl JM003_Searchlight_Control_1
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM003_Searchlight_Control_1_a.dds
+
+newmtl JM107_Binocular
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM107_Binocular_a.dds
+
+newmtl JM089_Signal_Platform_1
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM089_Signal_Platform_1_a.dds
+
+newmtl JM008_Searchlight
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM008_Searchlight_a.dds
+
+newmtl JM030_Wind_detection
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM030_Wind_detection_a.dds
+
+newmtl C001_Net
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\C001_Net_a.dds
+	map_d G:\Models\World_of_Warships\Yamato1944\C001_Net_a.dds
+
+newmtl JC001_Catapult_Shiki2
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JC001_Catapult_Shiki2_a.dds
+
+newmtl JC001_Catapult_Cradle_skinned
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JC001_Catapult_Cradle_a.dds
+
+newmtl CM001_Propeller
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\CM001_Propeller_a.dds
+
+newmtl JM007_Life_Buoy_box
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM007_Life_Buoy_box_a.dds
+
+newmtl JM039_Cutter_12m
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM039_Cutter_12m_a.dds
+
+newmtl JM086_Crane_3
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3000 0.3000 0.3000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Models\World_of_Warships\Yamato1944\default_ao.dds
+	map_Kd G:\Models\World_of_Warships\Yamato1944\JM086_Crane_3_a.dds

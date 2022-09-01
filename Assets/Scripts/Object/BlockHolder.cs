@@ -31,6 +31,26 @@ public class BlockHolder : MonoBehaviour
 
     }
 
+    public int GetID()
+    {
+        return block.ID;
+    }
+
+    public Texture2D GetTexture()
+    {
+        return material.GetTexture("_MainTex") as Texture2D;
+    }
+    
+    public Texture2D GetNormal()
+    {
+        return material.GetTexture("_BumpMap") as Texture2D;
+    }
+
+    public bool HasMesh()
+    {
+        return block.hasMesh;
+    }
+
     public string ToJson()
     {
         BlockHolder Root = transform.parent.GetComponent<BlockHolder>();
@@ -58,7 +78,6 @@ public class BlockHolder : MonoBehaviour
             block.texture = material.GetTexture("_MainTex") as Texture2D;
             block.normal = material.GetTexture("_BumpMap") as Texture2D;
         }
-        
         return JsonUtility.ToJson(block);
     }
 
