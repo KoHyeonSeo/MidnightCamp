@@ -1,3 +1,64 @@
 .h1 {
     margin: 0px;
 }
+
+body {
+    margin: 0px;
+}
+
+.main {
+    position: absolute;
+    margin: 0px;
+    width: 1920px;
+    height: 880px;
+    text-align: center;
+
+}
+
+.breif {
+    position: absolute;
+    left: 300px;
+    top: 310px;
+}
+
+.start {
+    background-color: #231F44;
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    left: 300px;
+    top:  801px;
+    z-index: 1;
+    text-align: center;
+    line-height: 81px;
+    font-size: 30px;
+    width: 519px;
+    height: 81px;
+    border: 2px solid #231F44;
+    border-radius: 25rem;
+}
+
+.guide {
+    color: #231F44;
+    background-color: #fff;
+    border: 2px solid #231F44;
+    border-radius: 25rem;
+    text-decoration: none;
+    position: absolute;
+    float: right;
+    left: 300px;
+    top:  907px;
+    z-index: 1;
+    text-align: center;
+    line-height: 81px;
+    font-size: 30px;
+    width: 519px;
+    height: 81px;
+}
+
+.monito {
+    position: absolute;
+    float: right;
+    right: 100px;
+    top: 410px;
+}

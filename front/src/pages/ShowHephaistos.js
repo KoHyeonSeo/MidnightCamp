@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { INIT_MODEL_INFO, SET_SEARCH_KEY, SET_SEARCH_TYPE } from '../modules/ModelModule';
 import HephaistosStyle from '../styles/Hephaistos.module.css';
 
+// 전체 파일 목록 페이지
+
 function ShowHephaistos() {
 
     const modelInfo = useSelector(state => state.modelReducer);
@@ -35,8 +37,7 @@ function ShowHephaistos() {
         () => {
             dispatch({ type: [INIT_MODEL_INFO]});
             //console.log(modelInfo[0])
-            //axios.get('http://localhost:8888/model')
-             axios.get('http://192.168.1.51:8888/model')
+            axios.get('http://192.168.1.51:8888/model')
         }, []
     )
 

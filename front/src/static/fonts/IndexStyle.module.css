@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+}
+
+
+
+/* 글꼴 전역 설정 */
+.index {
+    font-family: 'gmarket';
+    font-style: normal;
+    font-weight: 500;
+    color: #231F44;
+}
+
+input[type='text'] {
+    font-family: 'gmarket';
+    font-style: normal;
+    font-weight: 500;
+    color: #000;
+}
+
+::placeholder {
+    font-family: 'gmarket';
+    font-style: normal;
+    font-weight: 500;
+}
