@@ -43,3 +43,51 @@ exports.searchDetailByCode = (code) => {
         resolve(results);
     })
 }
+
+exports.insertModel = (model) => {
+    return new Promise(async (resolve, reject) => {
+        const connection = getConnection();
+        connection.beginTransaction();
+
+        try{
+            const result = await ModelRepository.insertModel(connection, model);
+            console.log('추가된 결과', result);
+            
+            // const insertedDiary = await ModelRepository.insertModel(connection, result.insertedId);
+            // console.log('insertedDiary:', insertedDiary);
+    
+            connection.commit();
+            resolve(result);
+        }catch(err){
+            connection.rollback();
+            reject(err)
+        }finally{
+            connection.end();
+        }
+        
+    })
+}
+
+exports.insertObject = (object_info) => {
+    return new Promise(async (resolve, reject) => {
+        const connection = getConnection();
+        connection.beginTransaction();
+
+        try{
+            const result = await ModelRepository.insertObject(connection, object_info);
+            console.log('추가된 결과', result);
+            
+            // const insertedDiary = await ModelRepository.insertModel(connection, result.insertedId);
+            // console.log('insertedDiary:', insertedDiary);
+    
+            connection.commit();
+            resolve(result);
+        }catch(err){
+            connection.rollback();
+            reject(err)
+        }finally{
+            connection.end();
+        }
+        
+    })
+}

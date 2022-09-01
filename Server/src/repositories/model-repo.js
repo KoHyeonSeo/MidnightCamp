@@ -62,7 +62,7 @@ exports.selectModelsByModelName = (connection, keyword) => {
     });
 }
 
-exports.selectModelsByModelName = (connection, code) => {
+exports.selectModelsByModelCode = (connection, code) => {
     return new Promise((resolve, reject) => {
         connection.query(modelQuery.selectModelDetailByCode(), [code],(err, results, fields) => {
 
@@ -72,12 +72,40 @@ exports.selectModelsByModelName = (connection, code) => {
             }
 
             console.log('results: ', results);
-
             const objects = [];
             for(let i = 0; i < results.length; i++) {
                 objects.push(new ObjectDTO(results[i]));
             }
             resolve(objects);
+        });
+    });
+}
+
+exports.insertModel = (connection, model) => {
+    return new Promise((resolve, reject) => {
+        connection.query(modelQuery.insertModel(), [ model.name, model.id, model.version, model.description/* 이미지경로 추가 할것 */],(err, results, fields) => {
+
+            if(err) {
+                console.log('err', err);
+                reject(err);
+            }
+
+            resolve(results);
+        });
+    });
+}
+
+exports.insertObject = (connection, object) => {
+    const {objectCode, objectRootId, objectTextUrl, objectTextureUrl, objectNormalUrl, modelCode} = object;
+    return new Promise((resolve, reject) => {
+        connection.query(modelQuery.insertObject(), [ objectCode, objectRootId, objectTextUrl, objectTextureUrl,objectNormalUrl, modelCode],(err, results, fields) => {
+
+            if(err) {
+                console.log('err', err);
+                reject(err);
+            }
+
+            resolve(results);
         });
     });
 }
