@@ -21,10 +21,14 @@ public class PanelChanger : MonoBehaviour
     public Button Btn_Delete;
     public Button Btn_Move;
 
+    public Button Btn_Save;    
+
     public GameObject Panel_Menu;
     public GameObject Panel_Object;
     public GameObject Panel_Color;
-    
+    public GameObject Panel_Save;
+
+
     public InputManager input;
     // 색상값 입력필드
     public GameObject Input_Red_Value;
@@ -48,6 +52,10 @@ public class PanelChanger : MonoBehaviour
     void Start()
     {
         Panel_Menu.gameObject.SetActive(true);
+        Panel_Save.gameObject.SetActive(true);
+
+        Panel_Object.gameObject.SetActive(false);
+        Panel_Color.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
