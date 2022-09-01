@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
 
     private Mode preState = Mode.Move;
 
+    public bool debugMode = false;  
+
     private void Start()
     {
         movingScript = system.GetComponent<DragBlock>();
@@ -60,6 +62,29 @@ public class GameManager : MonoBehaviour
         {
             preState = curState;
             ChangeState();
+        }
+        if (debugMode)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                curState = Mode.Move;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                curState = Mode.Rotate;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                curState = Mode.Delete;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                curState = Mode.ScaleEdit;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                curState = Mode.ColorChange;
+            }
         }
     }
     void ChangeState()
