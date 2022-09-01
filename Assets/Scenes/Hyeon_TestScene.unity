@@ -452,7 +452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352806647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 11.8, z: -20.2}
+  m_LocalPosition: {x: -0.5, y: 13.1, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -761,6 +761,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d967a88875512bb40aa95b9e9d1ac2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Btn_Object: {fileID: 0}
+  Btn_Color: {fileID: 0}
+  Panel_Menu: {fileID: 0}
+  Panel_Object: {fileID: 0}
+  Panel_Color: {fileID: 0}
 --- !u!114 &388801127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,6 +1176,7 @@ GameObject:
   - component: {fileID: 700877320}
   - component: {fileID: 700877323}
   - component: {fileID: 700877324}
+  - component: {fileID: 700877325}
   m_Layer: 0
   m_Name: System
   m_TagString: Untagged
@@ -1241,6 +1247,18 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96c458b5c6040484e8ecde443f721d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &700877325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700877319}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74715f5201732db48940ac2f2427cef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &761414603
@@ -1908,7 +1926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6892ec99568fa5d458301181e70aa712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Btn_Object: {fileID: 1701111906}
   Btn_Tetrahedron: {fileID: 2071189828}
   Btn_Hexahedron: {fileID: 1842234696}
   Btn_Sphere: {fileID: 1433117015}
