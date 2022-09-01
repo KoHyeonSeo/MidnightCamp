@@ -31,6 +31,11 @@ public class BlockHolder : MonoBehaviour
 
     }
 
+    public int GetRootId()
+    {
+        return block.rootID;
+    }
+    
     public int GetID()
     {
         return block.ID;

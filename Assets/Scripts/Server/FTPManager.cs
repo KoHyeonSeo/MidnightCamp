@@ -25,15 +25,6 @@ public class FTPManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    /*void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-            FtpUpload();
-
-        if (Input.GetKeyDown(KeyCode.D))
-            FtpDownload();
-    }*/
-
     public Task FtpUpload(string filePath, byte[] data)
     {
         FtpWebRequest ftpWebRequest = (FtpWebRequest)WebRequest.Create(serverPath + filePath);
