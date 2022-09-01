@@ -51,6 +51,15 @@ public class BlockHolder : MonoBehaviour
         return material.GetTexture("_BumpMap") as Texture2D;
     }
 
+    public void SetTexture(Texture2D texture)
+    {
+        material.SetTexture("_MainTex", texture);
+    }
+
+    public void SetNormal(Texture2D texture)
+    {
+        material.SetTexture("_BumpMap", texture);
+    }
     public bool HasMesh()
     {
         return block.hasMesh;
