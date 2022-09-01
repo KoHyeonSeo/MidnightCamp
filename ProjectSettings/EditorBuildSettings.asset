@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hyeon_TestScene.unity
     guid: e56a2837d8f48fa4888bb964694d0874
+  - enabled: 1
+    path: Assets/Scenes/LHE_Scenes/LHE_ObjectScene.unity
+    guid: 49200d5d40ffb8d4cb7ea401ebfabab8
+  - enabled: 1
+    path: Assets/Scenes/LHE_Scenes/LHE_3DScene.unity
+    guid: 66ba2a9875144f94bb76a29fd3a113dc
+  - enabled: 1
+    path: Assets/Scenes/LHE_Scenes/LHE_2DScene.unity
+    guid: 6d4291ae957014547a1d8343c421d161
   m_configObjects: {}

@@ -16,7 +16,7 @@ public class LHE_3DAxisRotate : MonoBehaviour
         rotY = transform.rotation.y; // 좌우
 
         // 시작위치
-        transform.position = new Vector3(LHE_CalculateMaxDistance.Instance.minX - 5, LHE_CalculateMaxDistance.Instance.averageY, LHE_CalculateMaxDistance.Instance.averageZ);
+        transform.position = new Vector3(LHE_CalculateMaxDistance.Instance.minX - 3, LHE_CalculateMaxDistance.Instance.averageY, LHE_CalculateMaxDistance.Instance.averageZ);
     }
 
     // Update is called once per frame
