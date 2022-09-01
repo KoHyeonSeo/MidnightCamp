@@ -73,6 +73,16 @@ public class HTTPManager : MonoBehaviour
         var jsonResponse = await response.Content.ReadAsStringAsync();
     }
 
+    /*static async Task GetAsync(HttpClient client)
+    {
+        using HttpResponseMessage response = await client.GetAsync("model");
+
+        print(response.EnsureSuccessStatusCode());
+
+        var jsonResponse = await response.Content.ReadAsStringAsync();
+        print($"{jsonResponse}\n");
+    }*/
+
     public async Task Login(string id, string password)
     {
         LoginRequest loginRequest = new LoginRequest();
