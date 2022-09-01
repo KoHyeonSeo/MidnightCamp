@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     private DeleteMode deleteScript;
     private RotationBlock rotateScript;
     private scaleEditor scaleScript;
+    private ColorMode colorScript;
 
     private Mode preState = Mode.Move;
 
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
         deleteScript = system.GetComponent<DeleteMode>();
         rotateScript = system.GetComponent<RotationBlock>();
         scaleScript = system.GetComponent<scaleEditor>();
+        colorScript = system.GetComponent<ColorMode>();
         ChangeState();
     }
 
@@ -87,6 +89,7 @@ public class GameManager : MonoBehaviour
         rotateScript.enabled = false;
         deleteScript.enabled = false;
         scaleScript.enabled = false;
+        colorScript.enabled = false;
     }
     void Rotate()
     {
@@ -94,6 +97,7 @@ public class GameManager : MonoBehaviour
         movingScript.enabled = false;
         deleteScript.enabled = false;
         scaleScript.enabled = false;
+        colorScript.enabled = false;
     }
     void Delete()
     {
@@ -101,10 +105,15 @@ public class GameManager : MonoBehaviour
         movingScript.enabled = false;
         rotateScript.enabled = false;
         scaleScript.enabled = false;
+        colorScript.enabled = false;
     }
     void ColorChage()
     {
-
+        colorScript.enabled = true;
+        deleteScript.enabled = false;
+        movingScript.enabled = false;
+        rotateScript.enabled = false;
+        scaleScript.enabled = false;
     }
     void ScaleEdit()
     {
