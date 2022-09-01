@@ -94,7 +94,8 @@ public class FTPManager : MonoBehaviour
 
         // 크기가 너무 작음
         Texture2D tex = new Texture2D(2, 2);
-
+        //print("filePath "+ filePath);
+        //print(serverPath + filePath);
         using (WebResponse response = ftpWebRequest.GetResponse())
         using (Stream responseStream = response.GetResponseStream())
         {

@@ -163,7 +163,27 @@ public string ProjectName
         List<GameObject> nodeList = new List<GameObject>();
         for (int i = 0; i < nodes.Count; i++)
         {
-            nodeList.Add(Instantiate(cube));    
+            GameObject block = Instantiate(cube);
+            string json = await DownloadJson(data.blocks[i].info_url);
+            BlockHolder blockHolder = block.GetComponent<BlockHolder>();
+            blockHolder.FromJson(json);
+            if (blockHolder.HasMesh())
+            {
+                print("data.blocks[i].texture_url " + data.blocks[i].texture_url);
+                print("data.blocks[i].normal_url "+ data.blocks[i].normal_url);
+                if (data.blocks[i].texture_url != "")
+                {
+                    Texture2D texture2D = await DownloadTexture(data.blocks[i].texture_url);
+                    blockHolder.SetTexture(texture2D);
+                }
+
+                if (data.blocks[i].normal_url != "")
+                {
+                    Texture2D normal = await DownloadTexture(data.blocks[i].normal_url);
+                    blockHolder.SetNormal(normal);
+                }
+            }
+            nodeList.Add(block);
         }
 
         for (int i = 0; i < nodes.Count; i++)
@@ -176,9 +196,9 @@ public string ProjectName
                 {
                     nodeList[i].transform.parent = nodeList[nodes[i][j]].transform;
                 }
-            }   
+            }
         }
-        
+
     }
     public async void SaveProject()
     {
