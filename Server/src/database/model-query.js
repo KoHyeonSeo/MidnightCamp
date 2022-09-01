@@ -65,3 +65,21 @@ exports.selectModelDetailByCode = () => {
          WHERE A.model_code = ?
     `
 }
+
+exports.insertModel = () => {
+    //, img_front_url, img_left_url, img_right_url, img_rear_url, img_up_url
+    return `
+        INSERT 
+          INTO TBL_MODEL(model_name, group_id, model_version, model_description)
+        VALUES (?,?,?,?)        
+          
+    `
+}
+
+exports.insertObject = () => {
+    return `
+        INSERT 
+          INTO TBL_OBJECT(object_id, object_root_id, object_text_url, object_texture_url,object_normal_url, model_code)
+        VALUES (?,?,?,?,?,?)
+    `
+}
