@@ -1,14 +1,145 @@
-.header {
-    width: 100%;
-    height: 54px;
-    
-    background-color: cornflowerblue;
-}
-
-.h1 {
+h1 {
     margin: 0px;
 }
 
-.h4 {
-    margin-top: 100px;
+.header {
+    position: absolute;
+    border-style: solid;
+    width: 1920px;
+    height: 200px;
+    border-width: 0px;
+    border-bottom-width: 10px;
+}
+
+.img {
+    position: absolute;
+    left: 100px;
+    top: 40px;
+}
+
+.signIn {
+    color: #231F44;
+    text-decoration: none;
+    position: absolute;
+    float: right;
+    /* background: url(../static/images/login_d.png); */
+    width: 237px;
+    height: 81px;
+    top: 79px;
+    right: 357px;
+    z-index: 1;
+    text-align: center;
+    line-height: 81px;
+    font-size: 30px;
+    background-color: #fff;
+}
+
+.signOut {
+    color: #231F44;
+    text-decoration: none;
+    position: absolute;
+    float: right;
+    /* background: url(../static/images/login_d.png); */
+    width: 237px;
+    height: 81px;
+    top: 79px;
+    right: 355px;
+    z-index: 1;
+    text-align: center;
+    line-height: 81px;
+    font-size: 30px;
+    background-color: #fff;
+    border: none;
+}
+
+.signIn:hover {
+    color: #231F44;
+    line-height: 81px;
+    text-align: center;
+    border: 2px solid #231F44;
+    border-radius: 25rem;
+    text-decoration: none;
+    position: absolute;
+    float: right;
+    /* background: url(../static/images/login_s.png); */
+    width: 237px;
+    height: 81px;
+    top: 77px;
+    right: 355px;
+    z-index: 1;
+    line-height: 81px;
+    font-size: 30px;
+}
+
+.signOut:hover {
+    color: #231F44;
+    line-height: 81px;
+    text-align: center;
+    border: 2px solid #231F44;
+    border-radius: 25rem;
+    text-decoration: none;
+    position: absolute;
+    float: right;
+    /* background: url(../static/images/login_s.png); */
+    width: 237px;
+    height: 81px;
+    top: 77px;
+    right: 355px;
+    z-index: 1;
+    line-height: 81px;
+    font-size: 30px;
+}
+
+.signUp {
+    color: #231F44;
+    text-decoration: none;
+    position: absolute;
+    float: right;
+    /* background: url(../static/images/join_d.png); */
+    width: 237px;
+    height: 81px;
+    top: 79px;
+    right: 100px;
+    z-index: 1;
+    line-height: 81px;
+    font-size: 30px;
+    border: 2px solid #231F44;
+    border-radius: 25rem;
+    text-align: center;
+}
+
+.signUp:hover {
+    color: #fff;
+    background-color: #231F44;
+    text-decoration: none;
+    position: absolute;
+    float: right;
+    /* background: url(../static/images/join_s.png); */
+    width: 237px;
+    height: 81px;
+    top: 79px;
+    right: 100px;
+    z-index: 1;
+    line-height: 81px;
+    font-size: 30px;
+    border: 2px solid #fff;
+    border-radius: 25rem;
+    text-align: center;
+}
+
+.button {
+    color: #231F44;
+    text-decoration: none;
+    position: absolute;
+    background: url(../static/images/환영합니다.png);
+    width: 237px;
+    height: 81px;
+    top: 79px;
+    right: 100px;
+    z-index: 1;
+    line-height: 81px;
+    font-size: 30px;
+    border: 2px solid #231F44;
+    border-radius: 25rem;
+    text-align: center;
 }

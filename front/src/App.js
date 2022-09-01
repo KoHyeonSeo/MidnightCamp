@@ -7,7 +7,9 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import ShowHephaistos from "./pages/ShowHephaistos";
 import ShowSearchHephaistos from "./pages/ShowSearchHephaistos";
-import Test from "./pages/Test";
+import MyPage from "./pages/MyPage";
+import Projects from "./pages/Projects";
+import Guide from "./pages/Guide";
 
 function App() {
   return (
@@ -15,18 +17,22 @@ function App() {
       <CookiesProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={ <Layout/> }>
-              <Route index element={ <Main/> } />
-            </Route>
-            <Route path="/signin" element={ <Signin/> }/>
-            <Route path="/signup" element={ <Signup/> }/>        
-            <Route path="/hephaistos">
-              <Route index element={ <ShowHephaistos/> }/>
-              <Route path="search" element={ <ShowSearchHephaistos/> }/>
-            </Route>  
-            <Route path="/test" element={ <Test/> }/>
-          </Routes>
-        </BrowserRouter>
+              <Route path="/" element={ <Layout/> }>
+                <Route index element={ <Main/> } />
+                <Route path="/mypage" element={ <MyPage/>}/> 
+                <Route path="/projects" element={ <Projects/>}/>
+                <Route path="/guide" element={ <Guide/>}/>
+              </Route>
+              <Route path="/signin" element={ <Signin/> }/>
+              <Route path="/signup" element={ <Signup/> }/>        
+              <Route path="/hephaistos">
+                <Route index element={ <ShowHephaistos/> }/>
+                <Route path="search" element={ <ShowSearchHephaistos/> }/>
+              </Route>
+               
+
+            </Routes>
+          </BrowserRouter>
       </CookiesProvider>
     </div>
   );

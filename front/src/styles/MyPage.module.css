@@ -1,0 +1,99 @@
+.mypage {
+    position: absolute;
+}
+
+.title {
+    position: absolute;
+    left: 100px;
+    width: 204px;
+    font-size: 41px;
+    border: 0px solid #231F44;
+    border-bottom-width: 10px;
+    top: 230px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.search {
+    position: absolute;
+    left: 100px;
+    width: 160px;
+    height: 30px;
+    border-radius: 0.4rem;
+    top: 330px;
+    padding: 0px;
+    padding-left: 40px;
+    font-size: 14px;
+}
+
+.mirror {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 334px;
+    left: 111px;
+}
+
+.unity {
+    position: absolute;
+    left: 460px;
+    top: 330px;
+}
+
+.logo {
+    position: absolute;
+    left: 100px;
+    top: 760px;
+    width: 204px;
+}
+
+.list {
+    position: absolute;
+    left: 100px;
+    top: 430px;
+    background-color: #f2f2f2;
+    height: 300px;
+    width: 218px;
+    overflow: scroll;
+    
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    position: relative;
+    list-style-type: none;
+    border: 2px solid #fff;
+    border-radius: 0.3rem;
+    margin: 0px;
+    height: 56px;
+    width: 204px;
+    padding-left: 12px;
+    line-height: 56px;
+}
+
+.check {
+    position: inherit;
+    margin-right: 12px;
+    top: 4px;
+}
+
+.uncheck {
+    position: inherit;
+    margin-right: 12px;
+    top: 4px;
+}
+
+
+.more {
+    position: absolute;
+    left: 145px;
+    top: 13px;
+}
+
+.firstLi {
+    background-color: #A0A1CF;
+}

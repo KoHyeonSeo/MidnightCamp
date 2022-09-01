@@ -1,0 +1,60 @@
+.body {
+    width: 1920px;
+    height: 1080px;
+    background-color: #231F44;
+    text-align: center;
+}
+
+.login {
+    display: inline;
+    color: #f3f3f3;
+    margin-top: 55px;
+    background-color: #231F44;
+    border-color: #231F44;
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.313em;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    width: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.inputId {
+    font-family: 'gmarket';
+    font-size: 16px;
+    width: 500px;
+    height: 30px;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 30px;
+}
+
+.inputPassword {
+    font-family: 'gmarket';
+    font-size: 16px;
+    width: 500px;
+    height: 30px;
+    padding: 0.3rem 0.5rem;
+}
+
+.loginbox {
+    margin-top: 200px;
+    display: inline-block;
+    width: 600px;
+    height: 400px;
+    border: 5px #231F44 solid;
+    border-radius: 0.913em;
+    background-color: #f3f3f3;
+}
+
+.loginTitle {
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 60px;
+}

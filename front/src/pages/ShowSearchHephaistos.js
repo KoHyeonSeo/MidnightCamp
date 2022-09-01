@@ -5,6 +5,8 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { INIT_MODEL_INFO, SET_SEARCH_KEY, SET_SEARCH_TYPE } from '../modules/ModelModule';
 import HephaistosStyle from '../styles/Hephaistos.module.css';
 
+// 검색 페이지
+
 function ShowSearchHephaistos() {
 
     const [searchParams] = useSearchParams();
@@ -42,7 +44,6 @@ function ShowSearchHephaistos() {
             console.log("ass", searchKey, searchType)
             //dispatch({ type: [INIT_MODEL_INFO] });
             //console.log(modelInfo[0]);
-            //axios.get(`http://localhost:8888/model/search?type=${ searchType }&keyword=${ searchKey }`);
             axios.get(`http://192.168.1.51:8888/model/search?type=${ searchType }&keyword=${ searchKey }`);
         }, [searchKey, searchParams]
     )

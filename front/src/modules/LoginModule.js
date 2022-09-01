@@ -2,13 +2,13 @@ import { createActions, handleActions } from "redux-actions";
 
 const initialState = [
     { 
-        login_id: '',
-        login_name: ''
+        login_id: ''
     }
 ];
 
 export const LOGIN = 'AUTH/LOGIN';
-export const LOGOUT = 'AUTH/LOOUT';
+export const LOGOUT = 'AUTH/LOGOUT';
+
 
 const actions = createActions({
     [LOGIN]: () => {},
@@ -17,21 +17,18 @@ const actions = createActions({
 
 export const loginReducer = handleActions(
     {
-        [LOGOUT]: (state, { payload }) => {
+        [LOGIN]: (state, { payload }) => {
 
-            state[0].login_id = '';
-            state[0].login_pwd = '';
+            state[0].login_id = payload.group_id;
 
             return state;
         },
-        [LOGIN]: (state = initialState[0], { payload }) => {
+        [LOGOUT]: (state = initialState[0], { payload }) => {
 
-            state[0].login_id = payload.group_id;
-            state[0].login_name = payload.group_name;
+            state[0].login_id = '';
 
             return state;
         }
-        
     },
     initialState
 );
