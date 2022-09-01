@@ -19,7 +19,7 @@ public class HTTPManager : MonoBehaviour
 
     HttpClient httpClient = new()
     {
-        BaseAddress = new Uri("http://192.168.1.51:8888")
+        BaseAddress = new Uri("http://192.168.1.50:8888")
     };
 
     private void Awake()
