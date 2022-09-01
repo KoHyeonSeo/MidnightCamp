@@ -1,0 +1,48 @@
+{
+  "user": "pkch0102",
+  "name": "New Project",
+  "version": 1,
+  "description": "New Project Description",
+  "img_front_url" : "",
+"img_left_url" : "",
+"img_right_url" : "",
+"img_rear_url" : "",
+"img_up_url" : "",
+  "blocks": [
+    {
+      "rootID": 0,
+      "ID": 603765572,
+      "info_url": "info/603765572.txt",
+      "texture_url": "texture/603765572.png",
+      "normal_url": "normal/603765572.png"
+    },
+    {
+      "rootID": 0,
+      "ID": -227290920,
+      "info_url": "info/603765572.txt",
+      "texture_url": "texture/603765572.png",
+      "normal_url": "normal/603765572.png"
+    },
+    {
+      "rootID": 0,
+      "ID": 673607990,
+      "info_url": "info/603765572.txt",
+      "texture_url": "texture/603765572.png",
+      "normal_url": "normal/603765572.png"
+    },
+    {
+      "rootID": 0,
+      "ID": -1889403904,
+      "info_url": "info/603765572.txt",
+      "texture_url": "texture/603765572.png",
+      "normal_url": "normal/603765572.png"
+    },
+    {
+      "rootID": 0,
+      "ID": -46765418,
+      "info_url": "info/603765572.txt",
+      "texture_url": "texture/603765572.png",
+      "normal_url": "normal/603765572.png"
+    }
+  ]
+}

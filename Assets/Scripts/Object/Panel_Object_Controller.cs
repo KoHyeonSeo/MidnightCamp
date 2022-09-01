@@ -32,6 +32,10 @@ public class Panel_Object_Controller : MonoBehaviour
     public Button Btn_Sphere;
     public Button Btn_Capsule;
     public Button Btn_Cylinder;
+    [SerializeField] Mesh cube;
+    [SerializeField] Mesh cyilinder;
+    [SerializeField] Mesh sphere;
+    [SerializeField] Mesh capsule;
 
     // 오브젝트 생성을 위한 변수
     public GameObject obj;
@@ -54,25 +58,26 @@ public class Panel_Object_Controller : MonoBehaviour
 
     public void Create_Tetrahedron()
     {
-        Instantiate(obj, transform.position, Quaternion.identity, root);
+        Instantiate(obj, transform.position, Quaternion.identity, root);        
     }
     public void Create_Hexahedron()
-    {
-        Instantiate(obj, transform.position, Quaternion.identity, root);
+    {        
+        GameObject hexa = Instantiate(obj, transform.position, Quaternion.identity, root);
+        hexa.GetComponent<MeshFilter>().mesh = cube;
     }
     public void Create_Sphere()
     {
-        Instantiate(obj, transform.position, Quaternion.identity, root);
+        GameObject sph = Instantiate(obj, transform.position, Quaternion.identity, root);
+        sph.GetComponent<MeshFilter>().mesh = sphere;
     }
     public void Create_Capsule()
     {
-        Instantiate(obj, transform.position, Quaternion.identity, root);
+        GameObject cap = Instantiate(obj, transform.position, Quaternion.identity, root);
+        cap.GetComponent<MeshFilter>().mesh = capsule;
     }
     public void Create_Cylinder()
     {
-        Instantiate(obj, transform.position, Quaternion.identity, root);
+        GameObject cylin = Instantiate(obj, transform.position, Quaternion.identity, root);
+        cylin.GetComponent<MeshFilter>().mesh = cyilinder;
     }
-
-
-
 }
