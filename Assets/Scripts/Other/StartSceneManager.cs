@@ -52,7 +52,7 @@ public class StartSceneManager : MonoBehaviour
         {
             print("¾À ÀüÈ¯");
             // ¿©±â¼­ ¾À ·Îµå
-            //SceneManager.LoadScene("");
+            SceneManager.LoadScene("EditorScene");
         }
         
     }
