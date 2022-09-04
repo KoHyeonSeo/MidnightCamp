@@ -26,7 +26,9 @@
     - Apply some algorithms
     - Build Rotation, Move, Color, Delete
 - Sangjun Cho 
-    - Design Data Management
+    - Design data structures and meshes, material.
+    - Data Serialization Design FTP
+    - Managing Texture Data with Servers
 - Haeun Lee
 - Kenki Lee
 ### <b>Network</b>
