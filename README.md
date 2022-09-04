@@ -18,7 +18,9 @@
 ## Project Contributors and Part
 ### <b>XR</b>
 - Youngchan Kwon (Team Leader) 
-    - asdada
+    - Implement Objects able to multiple selection
+        - Scale Editor production
+    - StartScene production
 - Hyeonseo Ko (PM)
     - Build InputManager and GameManager.
     - Apply some algorithms
