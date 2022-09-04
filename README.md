@@ -30,6 +30,10 @@
     - Data Serialization Design FTP
     - Managing Texture Data with Servers
 - Haeun Lee
+    - [2D and 3D viewer (or read-only) scenes]
+    - A camera that recognizes the center point of a target object
+    - Implementation of object rotation and zoom functions by mouse operation
+    - Object - 3D Viewer - 2D Viewer Thin Movement Implementation
 - Kenki Lee
 ### <b>Network</b>
 - Donghwoo Cho
