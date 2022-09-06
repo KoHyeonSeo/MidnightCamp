@@ -34,7 +34,7 @@
     - A camera that recognizes the center point of a target object
     - Implementation of object rotation and zoom functions by mouse operation
     - Object - 3D Viewer - 2D Viewer Thin Movement Implementation
-- Kenki Lee
+- Keunki Lee
     - Editor mode UI Button
     - Create Object
     - Recieve mesh, material info
