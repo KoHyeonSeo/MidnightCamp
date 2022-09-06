@@ -35,6 +35,7 @@
     - Implementation of object rotation and zoom functions by mouse operation
     - Object - 3D Viewer - 2D Viewer Thin Movement Implementation
 - Kenki Lee
+    - UI Button
 ### <b>Network</b>
 - Donghwoo Cho
     - Deploying Client Web Apps with React Redux
