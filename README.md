@@ -14,7 +14,6 @@
     - No boundaries between 2D and 3D.
     - Network + Application
     - Other people's designs can be obtained through the web.
-<br>
 ## Project Contributors and Part
 ### <b>XR</b>
 - Youngchan Kwon (Team Leader) 
@@ -54,15 +53,12 @@
     - Ui
     - Web design
     - Presentation material production
-<br>
 ## <b>Video</b>
 [![Youtube Badge](https://img.shields.io/badge/Youtube-ff0000?style=flat-square&logo=youtube&link=https://youtu.be/jHPfSC81JGY)](https://youtu.be/jHPfSC81JGY)
-<br>
 ## <b>Our Work(Korean Version)</b>
 ![KakaoTalk_20220915_090400206](https://user-images.githubusercontent.com/76097749/190283651-dc6cc565-3f0f-4701-af79-c37e119ebbbd.png)
 ![KakaoTalk_20220915_090400206_01](https://user-images.githubusercontent.com/76097749/190283660-26483308-a668-4d9b-a3b9-3c6c75715845.png)
 ![KakaoTalk_20220915_090400206_02](https://user-images.githubusercontent.com/76097749/190283676-83247a8c-1085-41b6-bc49-c9435a8493ba.png)
-<br>
 ## <b>Presentation (Korean Version)</b>
 ![image](https://user-images.githubusercontent.com/76097749/188304931-9cc79268-db64-4215-a598-41e3a616d7bf.png)
 ![image](https://user-images.githubusercontent.com/76097749/188304944-330d88c3-111e-4eec-be5a-a36bae13c551.png)
